@@ -4,7 +4,7 @@ import Hyperlink from 'react-native-hyperlink'
 import { Text, StyleSheet } from 'react-native'
 import openURL from './OpenUrl';
 import { useState } from "react";
-
+/**asdfsadfasdfds */
 const News = () => {
 
   const [showButton, setShowButton] = useState(false);
