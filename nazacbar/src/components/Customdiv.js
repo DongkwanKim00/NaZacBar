@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// 이응
+
 const CustomDiv1 = ({ text }) => {
     const customStyle = {
         padding: '2em 2em',
