@@ -16,7 +16,7 @@ const News = () => {
       setShowButton(false);
     }
   };
-
+/*12313123131231231*/ 
   const handleClick = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
