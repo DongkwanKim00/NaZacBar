@@ -10,7 +10,7 @@ const StyledFooter = styled.footer`
 const Footer = () => {
   return (
     <StyledFooter>
-      <p>&copy; 2023 My Drone Website. All rights reserved.</p>
+      <p>&copy; 2023 NaZacBar Website. All rights reserved.</p>
     </StyledFooter>
   );
 };

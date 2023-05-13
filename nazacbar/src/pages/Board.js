@@ -55,6 +55,7 @@ const Board = () => {
       })
       .then((response) => {
         console.log(response.data);
+        window.location.href = '/boardlist';
       })
       .catch((error) => {
         console.log(error);
@@ -77,14 +78,26 @@ const Board = () => {
   }, []);
 
   return (
-    <div style={{ backgroundImage: "url('/wooden-board.jpg')", padding: "50px" }}>
+    <div style={{
+      background: `url('/barImage2.png') no-repeat center center fixed`,
+      WebkitBackgroundSize: 'cover',
+      MozBackgroundSize: 'cover',
+      OBackgroundSize: 'cover',
+      backgroundSize: 'cover',
+      padding: '50px'
+    }}>
       <h1 style={{ textAlign: "center", marginBottom: "50px", color: "white" }}>게시판</h1>
       <form onSubmit={handleSubmit}>
-          <p style={{ color: "white"}}> 제목: <input type="text" class="form-control" placeholder="Title" aria-label="Title"  required={true} value={title} onChange={handleChange_title}></input></p>
-          <p style={{ color: "white"}}> 작성자: <input type="text" class="form-control" placeholder="Author" aria-label="Author" required={true} value={author} onChange={handleChange_author}></input></p>
-          <p style={{ color: "white"}}> 내용 <input type="text" class="form-control" placeholder="Content" aria-label="Content" required={true} value={content} onChange={handleChange_content}></input></p>
+          <p style={{ color: "white"}}> 제목: <input type="text" class="form-control" placeholder="Title" 
+            aria-label="Title"  required={true} value={title} onChange={handleChange_title}></input></p>
+          <p style={{ color: "white"}}> 작성자: <input type="text" class="form-control" placeholder="Author" 
+            aria-label="Author" required={true} value={author} onChange={handleChange_author}></input></p>
+          <label htmlFor="content" style={{color: 'white'}}>Content</label>
+            <textarea id="content" className="form-control" placeholder="Write your content here" 
+            required={true} value={content} onChange={handleChange_content}
+            style={{height: "200px"}}/>
           
-          
+          <p></p>
         <Button variant="primary" type="submit">
           제출
         </Button>
