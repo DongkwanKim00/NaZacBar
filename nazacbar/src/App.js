@@ -3,6 +3,7 @@ import News from "./pages/News";
 import Board from "./pages/Board";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
+import Login from "./pages/Login"
 import Layout from './pages/Layout'
 import NoPage from "./pages/NoPage";
 import Topbar from "./components/TopBar";
@@ -11,9 +12,14 @@ import BoardList from "./pages/BoardList";
 import BoardDetail from "./pages/BoardDetail";
 
 
+
 import { useState, useEffect } from "react";
 
+<<<<<<< Updated upstream
 //12351
+=======
+//1235asdf
+>>>>>>> Stashed changes
 function App() {
 
 
@@ -29,8 +35,11 @@ function App() {
           <Route path="news" element={<News />} />
           <Route path="products" element={<Products />} />
           <Route path="board" element={<Board />} />
+<<<<<<< Updated upstream
           <Route path="boardlist" element={<BoardList />}/>
           <Route exact path="/board/detail/:id" element={<BoardDetail />} />
+=======
+>>>>>>> Stashed changes
           <Route path="login" element={<Login />} />
           <Route path="*" element={<NoPage />} />
         </Route>

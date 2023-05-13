@@ -11,8 +11,13 @@ const Topbar = () => {
             <Nav className="mx-auto">
               <Nav.Link href="/news">News</Nav.Link>
               <Nav.Link href="/products">Products</Nav.Link>
+<<<<<<< Updated upstream
               <Nav.Link href="/boardlist">Board</Nav.Link>
               
+=======
+              <Nav.Link href="/board">Board</Nav.Link>
+              <Nav.Link href="/login">Login</Nav.Link>
+>>>>>>> Stashed changes
             </Nav>
           </Navbar.Collapse>
         </Navbar>
