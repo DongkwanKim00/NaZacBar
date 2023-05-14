@@ -18,7 +18,6 @@ import { useState, useEffect } from "react";
 
 //12351
 
-
 function App() {
 
 
@@ -39,6 +38,10 @@ function App() {
           <Route exact path="/board/detail/:id" element={<BoardDetail />} />
 
           <Route path="login" element={<Login />} />
+            
+
+
+
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

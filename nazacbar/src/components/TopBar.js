@@ -2,6 +2,9 @@ import React from "react";
 import { Navbar, Nav, Form, FormControl } from "react-bootstrap";
 import "../index.css";
 
+var log_name="Login"
+var log_href="/login"
+
 const Topbar = () => {
     return (
         <Navbar bg = "dark" variant = "dark" expand = "lg" className = "d-flex justify-content-center w-100" style={{ position: 'fixed', top: 0, zIndex: 1 }}>
@@ -15,7 +18,7 @@ const Topbar = () => {
               <Nav.Link href="/boardlist">Board</Nav.Link>
               
               <Nav.Link href="/board">Board</Nav.Link>
-              <Nav.Link href="/login">Login</Nav.Link>
+              <Nav.Link href={log_href}>{log_name}</Nav.Link>
 
             </Nav>
           </Navbar.Collapse>
