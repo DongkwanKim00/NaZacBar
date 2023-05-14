@@ -47,6 +47,10 @@ const Login = () =>{
     function onCloseSignUp() {
         setShowSignUp(false);
     }
+    function handleLogout() {
+        localStorage.removeItem('loggedInUser');
+        setLoggedInUser(null);
+    }
 
     // 로그인이 되어있을 때에만 사용자 정보화면을 렌더링합니다.
     if (loggedInUser) {
@@ -54,7 +58,7 @@ const Login = () =>{
             <div>
                 <Topbar log_name={`user: ${loggedInUser.name}`} />
                 <h1>Welcome {loggedInUser.name}!</h1>
-                <button onClick={() => setLoggedInUser(null)}>Logout</button>
+                <button onClick={handleLogout}>Logout</button>
             </div>
         );
     }
