@@ -29,16 +29,17 @@ const Login = () =>{
             Topbar.log_name="user : "+user.name
             console.log(Topbar.log_name)
             alert("login")
+            
         }
     }
 
     function onClickSignUp() {
         setShowSignUp(true);
-    }
-
-    function onCloseSignUp() {
+      }
+      
+      function onCloseSignUp() {
         setShowSignUp(false);
-    }
+      }
 
     return(
         <div style={{ 
@@ -57,7 +58,7 @@ const Login = () =>{
             </form>
             {showSignUp && <SignUp onClose={onCloseSignUp} />}
         </div>
-    )
+    );
 }
  
 export default Login;
