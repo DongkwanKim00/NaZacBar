@@ -21,9 +21,10 @@ const Rank = () => {
 
   return (
     <div style={{ background: `url('/barImage2.png') no-repeat center center fixed`, WebkitBackgroundSize: 'cover', MozBackgroundSize: 'cover', OBackgroundSize: 'cover', backgroundSize: 'cover', minHeight: '100vh', padding: '50px' }}>
-      <h1 style={{ textAlign: "center", color: "#ffffff" }}>카테고리별 인기 게시글</h1>
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        <table style={{ width: "60%", marginTop: "30px" }}>
+      <h1 style={{ textAlign: "center", color: "#ffffff", position: "fixed", left: "38%"}}>카테고리별 인기 게시글</h1>
+      {/* <div style={{ display: "flex", justifyContent: "center", position: "sticky"}}>  */}
+      <div style={{ left: "20%", width: "60%", marginTop: "100px", backgroundColor: "rgba(0, 0, 0, 0.5)", position: "fixed", maxHeight: "calc(100vh - 300px)", overflowY: "auto" }}>
+      <table style={{ width: "100%" }}>
           <thead>
             <tr>
               <th style={{ color: "#ffffff", borderBottom: "1px solid #ffffff", padding: "10px" }}>카테고리</th>
