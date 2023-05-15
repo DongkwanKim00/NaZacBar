@@ -13,6 +13,24 @@ const BoardDetail = () => {
       .catch((error) => console.log(error));
   }, [id]);
 
+  const handleRecommendation = async () => {
+    await axios
+      .post(`${baseUrl}/api/board/recommendation`, {
+        postId: id
+      })
+      .then((response) => {
+        console.log(response.data);
+        // 추천 후 게시글을 다시 조회하여 업데이트된 데이터를 표시
+        axios.get(`${baseUrl}/api/board/${id}`)
+          .then((response) => setPost(response.data))
+          .catch((error) => console.log(error));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+
   return (
     <div style={{
         background: `url('/barImage2.png') no-repeat center center fixed`,
@@ -26,9 +44,13 @@ const BoardDetail = () => {
         <div style={{textAlign: "center", margin: "50px", color: "#ffffff"}}>
             <h1>{post.title}</h1>
             <p>{post.author} - {new Date(post.createdAt).toLocaleString()}</p>
+            <p>추천 수: {post.recommendation}</p> 
+            <button onClick={handleRecommendation}>추천</button>
             <hr style={{borderColor: "#ffffff"}} />
             <p>{post.content}</p>
         </div>
+
+        
     </div>
   );
 };

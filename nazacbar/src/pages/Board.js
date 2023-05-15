@@ -48,6 +48,7 @@ const Board = () => {
   };
 
 
+  // 제출
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -66,6 +67,7 @@ const Board = () => {
         console.log(error);
       });
   };
+
 
   const [posts, setPosts] = useState([]);
 
@@ -128,7 +130,9 @@ const Board = () => {
         <p style={{ fontSize: "14px", fontWeight: "bold", marginBottom: "5px" }}>
           {post.author} - {new Date(post.createdAt).toLocaleString()}
         </p>
-        <p style={{ fontSize: "14px", marginBottom: "5px" }}>카테고리: {post.category}</p> {/* 추가된 부분: 카테고리 표시 */}
+        <p style={{ fontSize: "14px", marginBottom: "5px" }}>카테고리: {post.category}</p>
+
+
         <hr />
         <p style={{ fontSize: "14px" }}>{post.content}</p>
       </div>

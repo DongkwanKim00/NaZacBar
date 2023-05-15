@@ -12,7 +12,7 @@ const Topbar = () => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav" className = "text-center w-100">
             <Nav className="mx-auto">
-              <Nav.Link href="/news">News</Nav.Link>
+              <Nav.Link href="/rank">Rank</Nav.Link>
               <Nav.Link href="/products">Products</Nav.Link>
 
               <Nav.Link href="/boardlist">Board</Nav.Link>

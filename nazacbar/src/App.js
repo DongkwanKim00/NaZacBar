@@ -10,6 +10,7 @@ import Topbar from "./components/TopBar";
 import Footer from "./components/Footer";
 import BoardList from "./pages/BoardList";
 import BoardDetail from "./pages/BoardDetail";
+import Rank from "./pages/Rank";
 
 
 
@@ -38,6 +39,7 @@ function App() {
           <Route exact path="/board/detail/:id" element={<BoardDetail />} />
 
           <Route path="login" element={<Login />} />
+          <Route path="rank" element={<Rank />}/>
             
 
 
