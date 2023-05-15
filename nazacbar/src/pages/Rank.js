@@ -34,10 +34,13 @@ const Rank = () => {
             </tr>
           </thead>
           <tbody>
-          {rankedList.map((post) => (
+            {rankedList.map((post) => (
               <tr key={post.id}>
                 <td style={{ color: "#ffffff", padding: "10px" }}>{post.category}</td>
                 <td style={{ color: "#ffffff", padding: "10px" }}>
+                  {post.image && (
+                    <img src={`${baseUrl}/api/board/image/${post.id}`} alt="게시글 이미지" style={{ width: "50px", height: "auto", marginRight: "10px" }} />
+                  )}
                   <Link to={`/board/detail/${post.id}`} style={{ color: "#ffffff", textDecoration: "underline" }}>
                     {post.title}
                   </Link>

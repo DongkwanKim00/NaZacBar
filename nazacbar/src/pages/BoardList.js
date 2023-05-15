@@ -20,6 +20,14 @@ const BoardList = () => {
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f8f8f8;
+    display: flex;
+    align-items: center;
+  `;
+
+  const Thumbnail = styled.img`
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
   `;
 
   const Title = styled.h3`
@@ -34,31 +42,35 @@ const BoardList = () => {
 
   return (
     <Container>
-        <div style={{
-        background: `url('/barImage2.png') no-repeat center center fixed`,
-        WebkitBackgroundSize: 'cover',
-        MozBackgroundSize: 'cover',
-        OBackgroundSize: 'cover',
-        backgroundSize: 'cover',
-        minHeight: '100vh',
-        padding: '50px'
-      }}>
-      <h1 style={{ color: "white" }}>게시글 목록</h1>
-      <div style={{ alignItems: "center" }}>
-        <Link to="/board">
-          <button>작성하기</button>
-        </Link>
-      </div>
-
-      <p></p>
-      {posts.map((post) => (
-        <ListItem key={post.id}>
-          <Link to={`/board/detail/${post.id}`}>
-            <Title>{post.title}</Title>
+      <div
+        style={{
+          background: `url('/barImage2.png') no-repeat center center fixed`,
+          WebkitBackgroundSize: "cover",
+          MozBackgroundSize: "cover",
+          OBackgroundSize: "cover",
+          backgroundSize: "cover",
+          minHeight: "100vh",
+          padding: "50px"
+        }}
+      >
+        <h1 style={{ color: "white" }}>게시글 목록</h1>
+        <div style={{ alignItems: "center" }}>
+          <Link to="/board">
+            <button>작성하기</button>
           </Link>
-          <Author>{post.author} - {new Date(post.createdAt).toLocaleString()}</Author>
-        </ListItem>
-      ))}
+        </div>
+
+        {posts.map((post) => (
+          <ListItem key={post.id}>
+            {post.image && <Thumbnail src={`${baseUrl}/api/board/image/${post.id}`} alt="게시글 이미지" />}
+            <div>
+              <Link to={`/board/detail/${post.id}`}>
+                <Title>{post.title}</Title>
+              </Link>
+              <Author>{post.author} - {new Date(post.createdAt).toLocaleString()}</Author>
+            </div>
+          </ListItem>
+        ))}
       </div>
     </Container>
   );
