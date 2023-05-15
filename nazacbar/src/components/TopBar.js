@@ -17,7 +17,6 @@ const Topbar = () => {
 
               <Nav.Link href="/boardlist">Board</Nav.Link>
               
-              <Nav.Link href="/board">Board</Nav.Link>
               <Nav.Link href={log_href}>{log_name}</Nav.Link>
 
             </Nav>

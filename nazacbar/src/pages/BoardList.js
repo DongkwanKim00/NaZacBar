@@ -4,7 +4,7 @@ import axios from "axios";
 import styled from "styled-components";
 
 const BoardList = () => {
-  const baseUrl = "http://localhost:8081";
+  const baseUrl = "http://localhost:8086";
 
   const [posts, setPosts] = useState([]);
 

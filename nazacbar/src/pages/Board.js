@@ -3,11 +3,16 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 
 const Board = () => {
-  const baseUrl = "http://localhost:8081";
+  const baseUrl = "http://localhost:8086";
 
   const [title, setTitle] = useState("");
-  const [author, setAuthor] = useState("");
   const [content, setContent] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState(""); 
+  
+
+  // 작성자를 로그인된 사용자의 이름으로 설정
+  const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+  const author = loggedInUser ? loggedInUser.name : '';
 
   useEffect(() => {
     getBoard();
@@ -20,8 +25,8 @@ const Board = () => {
       .then((response) => {
         console.log(response.data);
         setTitle(response.data.title);
-        setAuthor(response.data.author);
         setContent(response.data.content);
+        setSelectedCategory(response.data.category);
       })
       .catch((error) => {
         console.log(error);
@@ -33,15 +38,14 @@ const Board = () => {
     setTitle(e.target.value);
   }
 
-  const handleChange_author = (e)=>{
-    e.preventDefault();
-    setAuthor(e.target.value);
-  }
-
   const handleChange_content = (e)=>{
     e.preventDefault();
     setContent(e.target.value);
   }
+
+  const handleChange_category = (e) => { 
+    setSelectedCategory(e.target.value);
+  };
 
 
   const handleSubmit = async (e) => {
@@ -52,6 +56,7 @@ const Board = () => {
         title: title,
         author: author,
         content: content,
+        category: selectedCategory
       })
       .then((response) => {
         console.log(response.data);
@@ -63,11 +68,7 @@ const Board = () => {
   };
 
   const [posts, setPosts] = useState([]);
-  const [newPost, setNewPost] = useState({
-    title: "",
-    author: "",
-    content: "",
-  });
+
 
 
   useEffect(() => {
@@ -88,41 +89,49 @@ const Board = () => {
     }}>
       <h1 style={{ textAlign: "center", marginBottom: "50px", color: "white" }}>게시판</h1>
       <form onSubmit={handleSubmit}>
-          <p style={{ color: "white"}}> 제목: <input type="text" class="form-control" placeholder="Title" 
-            aria-label="Title"  required={true} value={title} onChange={handleChange_title}></input></p>
-          <p style={{ color: "white"}}> 작성자: <input type="text" class="form-control" placeholder="Author" 
-            aria-label="Author" required={true} value={author} onChange={handleChange_author}></input></p>
-          <label htmlFor="content" style={{color: 'white'}}>Content</label>
-            <textarea id="content" className="form-control" placeholder="Write your content here" 
-            required={true} value={content} onChange={handleChange_content}
-            style={{height: "200px"}}/>
-          
-          <p></p>
-        <Button variant="primary" type="submit">
-          제출
-        </Button>
-      </form>
+        <p style={{ color: "white"}}> 제목: <input type="text" className="form-control" placeholder="Title" 
+          aria-label="Title"  required={true} value={title} onChange={handleChange_title}></input></p>
+        <p style={{ color: "white"}}> 작성자: {author}</p>
+        <p style={{ color: "white"}}> 카테고리: 
+          <select className="form-control" value={selectedCategory} onChange={handleChange_category}>
+            <option value="">카테고리 선택</option>
+            <option value="Soju">소주</option>
+            <option value="Beer">맥주</option>
+            <option value="Whiskey">위스키</option>
+          </select>
+        </p>
+        <label htmlFor="content" style={{color: 'white'}}>Content</label>
+          <textarea id="content" className="form-control" placeholder="Write your content here" 
+          required={true} value={content} onChange={handleChange_content}
+          style={{height: "200px"}}/>
+        
+        <p></p>
+      <Button variant="primary" type="submit">
+        제출
+      </Button>
+    </form>
 
-      <div style={{ minHeight: "60vh", overflowY: "auto" }}>
-        {posts.map((post) => (
-        <div
-          key={post.id}
-          style={{
-            backgroundColor: "white",
-            padding: "10px",
-            margin: "20px 0",
-            borderRadius: "10px",
-          }}
-        >
-          <p style={{ fontSize: "18px", fontWeight: "bold", marginBottom: "5px" }}>
-            {post.title}
-          </p>
-          <p style={{ fontSize: "14px", fontWeight: "bold", marginBottom: "5px" }}>
-            {post.author} - {new Date(post.createdAt).toLocaleString()}
-          </p>
-          <hr />
-          <p style={{ fontSize: "14px" }}>{post.content}</p>
-        </div>
+    <div style={{ minHeight: "60vh", overflowY: "auto" }}>
+      {posts.map((post) => (
+      <div
+        key={post.id}
+        style={{
+          backgroundColor: "white",
+          padding: "10px",
+          margin: "20px 0",
+          borderRadius: "10px",
+        }}
+      >
+        <p style={{ fontSize: "18px", fontWeight: "bold", marginBottom: "5px" }}>
+          {post.title}
+        </p>
+        <p style={{ fontSize: "14px", fontWeight: "bold", marginBottom: "5px" }}>
+          {post.author} - {new Date(post.createdAt).toLocaleString()}
+        </p>
+        <p style={{ fontSize: "14px", marginBottom: "5px" }}>카테고리: {post.category}</p> {/* 추가된 부분: 카테고리 표시 */}
+        <hr />
+        <p style={{ fontSize: "14px" }}>{post.content}</p>
+      </div>
       ))}
     </div>
   </div>

@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 
 const BoardDetail = () => {
-  const baseUrl = "http://localhost:8081";
+  const baseUrl = "http://localhost:8086";
   const { id } = useParams();
   const [post, setPost] = useState({});
 
