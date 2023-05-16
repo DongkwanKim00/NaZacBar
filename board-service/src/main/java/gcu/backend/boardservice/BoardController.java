@@ -5,6 +5,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.StringUtils;
@@ -69,8 +70,16 @@ public class BoardController {
     }
 
     @GetMapping("/api/board/{id}")
-    public Optional<Board> getBoardId(@PathVariable("id") Long id ){
-        return boardRepository.findById(id);
+    public ResponseEntity<?> getBoardId(@PathVariable("id") Long id) {
+        Optional<Board> optionalBoard = boardRepository.findById(id);
+        if (optionalBoard.isPresent()) {
+            Board board = optionalBoard.get();
+            // 게시글 데이터를 반환하는 코드
+            return ResponseEntity.ok(board);
+        } else {
+            // 게시글이 없는 경우 NoPage로 리다이렉트하는 코드
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("NoPage");
+        }
     }
 
     @PostMapping("/api/board/recommendation")
@@ -107,6 +116,46 @@ public class BoardController {
             }
         }
         return ResponseEntity.notFound().build();
+    }
+
+    @PutMapping("/api/board/{id}")
+    public ResponseEntity<String> updateBoard(
+            @PathVariable("id") Long id,
+            @RequestBody Board updatedBoard
+    ) {
+        Optional<Board> optionalBoard = boardRepository.findById(id);
+        if (optionalBoard.isPresent()) {
+            Board board = optionalBoard.get();
+            board.setTitle(updatedBoard.getTitle());
+            board.setContent(updatedBoard.getContent());
+            boardRepository.save(board);
+            return ResponseEntity.ok("Board updated successfully");
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @DeleteMapping("/api/board/{id}")
+    public String deleteBoard(@PathVariable("id") Long id) {
+        Optional<Board> optionalBoard = boardRepository.findById(id);
+        if (optionalBoard.isPresent()) {
+            Board board = optionalBoard.get();
+
+            // Delete the associated image file if it exists
+            if (board.getImage() != null) {
+                Path imagePath = Path.of(board.getImage());
+                try {
+                    Files.deleteIfExists(imagePath);
+                } catch (IOException ex) {
+                    throw new RuntimeException("Failed to delete the image file.", ex);
+                }
+            }
+
+            boardRepository.delete(board);
+            return "Board deleted successfully";
+        } else {
+            return "Board not found";
+        }
     }
 
 
