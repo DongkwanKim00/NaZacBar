@@ -89,8 +89,8 @@ const SignUp = ({ onClose }) => {
             <label style={{ display: 'block' }}>나이:</label>
             <input type="number" value={age} onChange={handleAgeChange} required style={{ color: '#000' }} />
           </div>
-          <button type="submit" style={{ ...buttonStyle, color: '#000' }}>회원가입</button>
-          <button type="button" onClick={onClose} style={{ ...buttonStyle, color: '#000' }}>취소</button>
+          <button type="submit" style={{ ...buttonStyle, color: '#fff' }}>회원가입</button>
+          <button type="button" onClick={onClose} style={{ ...buttonStyle, color: '#fff' }}>취소</button>
         </form>
       </div>
     </div>
