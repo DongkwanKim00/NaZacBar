@@ -41,7 +41,7 @@ function App() {
           <Route path="login" element={<Login />} />
           <Route path="rank" element={<Rank />}/>
             
-
+          <Route path="/search" element={<Search />}></Route>
 
 
           <Route path="*" element={<NoPage />} />
