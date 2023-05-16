@@ -7,10 +7,7 @@ const Home = () => {
     return (
         <div>
 
-            <SliderImg />
-            <MainContents />
-            <h> &nbsp; We provide you with the best service. </h>
-
+            <HomePageNaJacBar />
             
         </div>
     );
