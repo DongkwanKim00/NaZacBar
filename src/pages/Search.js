@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-
+import 전국소주 from'../전국 소주/참이슬.jpg'
 import Information from './info-json';
 import "../index.css";
+import "./Soju.css";
+
 
 
 
@@ -102,7 +104,8 @@ class Search extends Component {
         
         </div>
        <div className="home-contents-area">
-        
+        <h1 align='center'>참이슬</h1>
+        <img className='sojustyle' src={전국소주}></img>
         
         </div>
         </div>
