@@ -1,24 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import News from "./pages/News";
+import Board from "./pages/Board";
+import Home from "./pages/Home";
+import Products from "./pages/Products";
+import Login from "./pages/Login"
+import Layout from './pages/Layout'
+import NoPage from "./pages/NoPage";
+import Topbar from "./components/TopBar";
+import Footer from "./components/Footer";
+import BoardList from "./pages/BoardList";
+import BoardDetail from "./pages/BoardDetail";
+import Search from "./pages/Search"
+
+
+import { useState, useEffect } from "react";
+
+
+//12351
 
 function App() {
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    <div style={{height: '80px', backgroundColor: '#f1f1f1'}}>
+      <Topbar />
     </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="news" element={<News />} />
+          <Route path="products" element={<Products />} />
+          <Route path="board" element={<Board />} />
+
+          <Route path="boardlist" element={<BoardList />}/>
+          <Route exact path="/board/detail/:id" element={<BoardDetail />} />
+
+          <Route path="login" element={<Login />} />
+            
+          <Route path="/search" element={<Search />}></Route>
+
+
+          <Route path="*" element={<NoPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+    <Footer/>
+    </>
   );
 }
 
