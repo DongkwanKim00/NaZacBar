@@ -114,3 +114,13 @@ code {
   background: #ece6cc;
 
 }
+
+button{ /* 홈 때문에 추가 */
+
+  background-color:transparent;
+  border: 0;
+}
+img{ /* 홈 때문에 추가 */
+
+  border: 0;
+}
