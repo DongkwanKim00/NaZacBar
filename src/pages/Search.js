@@ -96,7 +96,7 @@ class Search extends Component {
     })
     if (checkClicked==='true') {
       return (
-        <div>
+        <div style={{ marginTop: '16px' }}>
         <div className="home-search-area">
         <input type="text" placeholder="Enter " style={elementStyle} onKeyDown={(e)=>this.searchSpace(e)} />
         
@@ -109,7 +109,7 @@ class Search extends Component {
       );
   }
     return (
-      <div>
+      <div style={{ marginTop: '16px' }}>
       <div className="home-search-area">
       <input type="text" placeholder="Enter " style={elementStyle} onKeyDown={(e)=>this.searchSpace(e)} />
       
