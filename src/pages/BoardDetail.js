@@ -1,16 +1,25 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const BoardDetail = () => {
   const baseUrl = "http://localhost:8086";
   const { id } = useParams();
   const [post, setPost] = useState({});
+  const [notFound, setNotFound] = useState(false);
 
   useEffect(() => {
     axios
       .get(`${baseUrl}/api/board/${id}`)
-      .then((response) => setPost(response.data))
+      .then((response) => {
+        const data = response.data;
+        if (data === "NoPage") {
+          setNotFound(true);
+        } else {
+          setPost(response.data);
+        }
+      })
       .catch((error) => console.log(error));
   }, [id]);
 
@@ -30,6 +39,16 @@ const BoardDetail = () => {
       .catch((error) => {
         console.log(error);
       });
+  };
+
+  // 삭제
+  const handleDelete = async () => {
+    try {
+      await axios.delete(`${baseUrl}/api/board/${id}`);
+      window.location.href = '/boardlist';
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -58,8 +77,15 @@ const BoardDetail = () => {
           src={`${baseUrl}/api/board/image/${post.id}`}
           alt="게시글 이미지"
           style={{ maxWidth: "40%", height: "auto" }}
-        />
+          />
         )}
+        <div>
+          <Link to={`/board/edit/${id}`}>
+            <button>수정</button>
+          </Link> {" "}
+          <button onClick={handleDelete}>삭제</button>
+        </div>
+
       </div>
     </div>
   );

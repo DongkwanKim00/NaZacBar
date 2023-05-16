@@ -59,6 +59,7 @@ const BoardList = () => {
             <button>작성하기</button>
           </Link>
         </div>
+        <p></p>
 
         {posts.map((post) => (
           <ListItem key={post.id}>

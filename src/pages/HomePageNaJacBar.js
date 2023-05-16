@@ -14,6 +14,7 @@ const navigate = useNavigate();
   };
 
 return(
+  <div style={{ marginTop: '16px' }}>
 <div style={{
     background: `url('/NajacBarHomePage.png') no-repeat center`,
         WebkitBackgroundSize: 'cover',
@@ -49,6 +50,7 @@ return(
 </div>
 
 
+    </div>
     </div>
 );
 
