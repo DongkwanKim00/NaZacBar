@@ -11,7 +11,7 @@ import Footer from "./components/Footer";
 import BoardList from "./pages/BoardList";
 import BoardDetail from "./pages/BoardDetail";
 import Rank from "./pages/Rank";
-
+import Search from "./pages/Search"
 
 
 import { useState, useEffect } from "react";
