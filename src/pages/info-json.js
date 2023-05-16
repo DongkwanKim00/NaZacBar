@@ -4,7 +4,8 @@ const Information = [
   {
     "name":"Samule",
     "age":21,
-    "country":"USA"
+    "country":"USA",
+    "image": "\NaZacBar\전국 소주\대선.jpg"
   },
   {
     "name":"Sam",
