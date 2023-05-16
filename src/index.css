@@ -96,3 +96,21 @@ code {
 .top-button:hover {
   opacity: 0.8;
 }
+
+.home-search-area{ /* 홈 때문에 추가*/
+  width: 30%;
+  float: left;
+  height: 550px;
+  box-sizing: border-box;
+  background: #8977ad;
+
+}
+
+.home-contents-area{ /* 홈 때문에 추가*/
+  width: 70%;
+  float: right;
+  height: 550px;
+  box-sizing: border-box;
+  background: #ece6cc;
+
+}
