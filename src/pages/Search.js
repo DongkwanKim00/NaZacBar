@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Information from './info-json';
 import '../index.css';
 import './Soju.css';
+import CommentBox from './CommentBox';
 
 class Search extends Component {
   constructor() {
@@ -66,7 +67,7 @@ class Search extends Component {
         return data;
       }
     }).map((data) => (
-      <div>
+      <div key={data.name}>
         <ul>
           <li style={{ position: 'relative', left: '10vh' }}>
             <button style={styleInfo} onClick={this.handleClick(1)}>
@@ -81,56 +82,52 @@ class Search extends Component {
       (data) => data.name === this.state.clickedItem
     );
 
-    if (checkClicked === 1 && selectedItem) {
-      const selectedItemContent = Information.find(
-        (data) => data.name === this.state.clickedItem
-      ).content;
-
-      return (
-        <div style={{ marginTop: '16px' }}>
-          <div className="home-search-area">
-            <input
-              type="text"
-              placeholder="Enter "
-              style={elementStyle}
-              onKeyDown={(e) => this.searchSpace(e)}
-            />
-          </div>
-          <div className="home-contents-area">
-            <h1 align="center">{this.state.clickedItem}</h1>
-            
-            <img
-              className="sojustyle"
-              src={`/전국 소주/${selectedItem.image}`}
-              alt={selectedItem.name}
-            />
-            <div className="content-container">
-            <p>{selectedItemContent}</p>
-
-            </div>
-               <div className="like-container">
-               <img className="like-notlike" src={`/like.png`} alt="Like" />
-              <img className="like-notlike" src={`/NotLike.png`} alt="Not Like" />
+    return (
+      <div style={{ marginTop: '16px' }}>
+        <div className="home-search-area">
+          <input
+            type="text"
+            placeholder="Enter "
+            style={elementStyle}
+            onKeyDown={(e) => this.searchSpace(e)}
+          />
+        </div>
+        <div className="home-contents-area">
+          {checkClicked === 1 && selectedItem ? (
+            <>
+              <h1 align="center">{this.state.clickedItem}</h1>
+              <img
+                className="sojustyle"
+                src={`/전국 소주/${selectedItem.image}`}
+                alt={selectedItem.name}
+              />
+              <div className="content-container">
+                <p>{selectedItem.content}</p>
               </div>
-
-          </div>
+              <div className="like-container">
+                <img className="like-notlike" src={`/like.png`} alt="Like" />
+                <img
+                  className="like-notlike"
+                  src={`/NotLike.png`}
+                  alt="Not Like"
+                />
+              </div>
+              <div className="like-container">
+                <div>
+                  <p className="numOfLikes" alt="numOfLikes">15</p>
+                </div>
+                <div>
+                  <p className="numOfNotLikes" alt="numOfNotLikes">20</p>
+                </div>
+              </div>
+              <CommentBox />
+            </>
+          ) : (
+            items
+          )}
         </div>
-      );
-    } else {
-      return (
-        <div style={{ marginTop: '16px' }}>
-          <div className="home-search-area">
-            <input
-              type="text"
-              placeholder="Enter "
-              style={elementStyle}
-              onKeyDown={(e) => this.searchSpace(e)}
-            />
-          </div>
-          <div className="home-contents-area">{items}</div>
-        </div>
-      );
-    }
+      </div>
+    );
   }
 }
 

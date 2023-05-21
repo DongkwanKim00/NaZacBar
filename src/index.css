@@ -100,7 +100,7 @@ code {
 .home-search-area{ /* 홈 때문에 추가*/
   width: 30%;
   float: left;
-  height: 550px;
+  height: 850px;
   box-sizing: border-box;
   background: #8977ad;
 
@@ -109,7 +109,7 @@ code {
 .home-contents-area{ /* 홈 때문에 추가*/
   width: 70%;
   float: right;
-  height: 550px;
+  height: 850px;
   box-sizing: border-box;
   background: #ece6cc;
 
@@ -124,6 +124,70 @@ code {
   height:70px;
   
 }
+.numOfLikes{
+  margin: 0 430px;
+  margin-right: -285px;
+  color:blue;
+  font-weight:bold;
+}
+.numOfNotLikes{
+  margin: 0 430px;
+  margin-right: -285px;
+  color : red;
+  font-weight:bold;
+}
+.comment-box-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.comment-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.comment-box {
+  width: 400px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.comment-box h3 {
+  margin-bottom: 10px;
+}
+
+.comment-box ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.comment-box li {
+  margin-bottom: 10px;
+}
+
+.comment-box textarea {
+  width: 100%;
+  height: 100px;
+  resize: none;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.comment-box button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.comment-box button:hover {
+  background-color: #45a049;
+}
 .like-container {
   display: flex; /* 내부 요소들을 가로로 배치 */
   
@@ -132,6 +196,7 @@ code {
   margin-right: -305px; /* 이미지 사이의 오른쪽 여백 제거 */
   
 }
+
 button{ /* 홈 때문에 추가 */
 
   background-color:transparent;
