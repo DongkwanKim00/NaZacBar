@@ -114,7 +114,24 @@ code {
   background: #ece6cc;
 
 }
+.content-container {
+  padding: 0 250px; /* 좌우 여백 설정 */
+}
 
+.like-notlike {
+  margin: 0 400px;
+  width:70px;
+  height:70px;
+  
+}
+.like-container {
+  display: flex; /* 내부 요소들을 가로로 배치 */
+  
+}
+.like-container img {
+  margin-right: -305px; /* 이미지 사이의 오른쪽 여백 제거 */
+  
+}
 button{ /* 홈 때문에 추가 */
 
   background-color:transparent;

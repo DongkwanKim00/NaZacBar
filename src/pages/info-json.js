@@ -1,61 +1,55 @@
-import react,{Component} from "react";
+import react, { Component } from "react";
 
 const Information = [
   {
-    "name":"Samule",
-    "age":21,
-    "country":"USA",
-    "image": "\NaZacBar\전국 소주\대선.jpg"
+    "name": "참이슬",
+    "image": "../전국 소주/참이슬.jpg",
+    "content": "참이슬 참이슬 참이슬 참이슬 참이슬 참이슬 참이슬 참이슬 참이슬 참이슬 참이슬 참이슬 참이슬 참이슬 참이슬 참이슬 참이슬 참이슬  "
   },
   {
-    "name":"Sam",
-    "age":21,
-    "country":"USA"
+    "name": "대선",
+    "image": "../전국 소주/대선.jpg",
+    "content": "대선  대선  대선  대선  대선  대선  대선  대선  대선  대선  대선  대선  대선  대선  대선  대선  대선  대선  대선  대선  "
   },
   {
-    "name":"Mark",
-    "age":21,
-    "country":"Africa"
+    "name": "맛있는 참",
+    "image": "../전국 소주/맛있는 참.jpg",
+    "content": "술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 "
   },
   {
-    "name":"Markus",
-    "age":21,
-    "country":"Africa"
+    "name": "O2린",
+    "image": "../전국 소주/O2린.jpg",
+    "content": "술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 "
   },
   {
-    "name":"Aayush",
-    "age":21,
-    "country":"India"
+    "name": "시원한 청풍",
+    "image": "../전국 소주/시원한 청풍.jpg",
+    "content": "술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 "
   },
   {
-    "name":"Sean",
-    "age":21,
-    "country":"Ireland"
+    "name": "잎새주",
+    "image": "../전국 소주/잎새주.jpg",
+    "content": "술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 "
   },
   {
-    "name":"Eduardo",
-    "age":21,
-    "country":"France"
+    "name": "좋은 데이",
+    "image": "../전국 소주/좋은 데이.jpg",
+    "content": "술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 "
   },
   {
-    "name":"Dustin",
-    "age":21,
-    "country":"Spain"
+    "name": "처음 처럼",
+    "image": "../전국 소주/처음 처럼.jpg",
+    "content": "술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 "
   },
   {
-    "name":"Alexendra",
-    "age":21,
-    "country":"USA"
+    "name": "한라산",
+    "image": "../전국 소주/한라산.jpg",
+    "content": "술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 "
   },
   {
-    "name":"Lee",
-    "age":21,
-    "country":"China"
-  },
-  {
-    "name":"Jim",
-    "age":21,
-    "country":"Korea"
+    "name": "화이트",
+    "image": "../전국 소주/화이트.jpg",
+    "content": "술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 술 설명 "
   }
 ];
 
