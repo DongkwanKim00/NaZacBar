@@ -5,123 +5,117 @@ import "../index.css";
 import "./Soju.css";
 
 
-
-
-
 class Search extends Component {
-
-  state={
-      checkClicked : 'false'
-
-  };
-
-  handleClick =(sign)=> (e)=>{
-    if(sign==='true'){
-        this.setState((pre)=>{
-          return {
-
-            checkClicked: 'true'
-
-          }
-
-        });
-
-    }
-
-
-  };
-
-
-
-  constructor(){
+  constructor() {
     super();
-
-    this.state={
-      search:null
+    this.state = {
+      search: null,
+      checkClicked: 0
     };
   }
 
-  searchSpace=(event)=>{
-    if(event.key=="Enter"){
-    let keyword = event.target.value;
-    this.setState({search:keyword})
-  }
-  }
+  handleClick = (sign) => (e) => {
+    if (sign === 1) {
+      this.setState((prevState) => ({
+        checkClicked: 1
+      }));
+      
+    }
+  };
 
-  render(){
-   
+  searchSpace = (event) => {
+    if (event.key === "Enter") {
+      if (this.state.checkClicked === 1) {
+        this.setState({
+          checkClicked: 0,
+          search: event.target.value
+        });
+        
+      } else {
+        this.setState({
+          search: event.target.value
+        });
+        
+      }
+    }
+  };
+
+  render() {
     const { checkClicked } = this.state;
     const styleInfo = {
-      paddingRight:'10px'
-    }
-    const elementStyle ={
-      border:'solid',
-      borderRadius:'10px',
-      position:'relative',
-      left:'10vh',
-      height:'3vh',
-      width:'20vh',
-      marginTop:'5vh',
-      marginBottom:'10vh'
-    }
-    const items = Information.filter((data)=>{
-      if(this.state.search == null)
-          return data
-      else if(data.name.toLowerCase().includes(this.state.search.toLowerCase()) || data.country.toLowerCase().includes(this.state.search.toLowerCase())){
-          return data
-      }
-    }).map(data=>{
+      paddingRight: '10px'
+    };
+    const elementStyle = {
+      border: 'solid',
+      borderRadius: '10px',
+      position: 'relative',
+      left: '10vh',
+      height: '3vh',
+      width: '20vh',
+      marginTop: '5vh',
+      marginBottom: '10vh'
+    };
 
-      
-      return(
-        
-      /*<div>
-        <ul>
-          <li style={{position:'relative',left:'10vh'}}>
-            <span style={styleInfo}>{data.name}</span>
-            <span style={styleInfo}>{data.age}</span>
-            <span style={styleInfo}>{data.country}</span>
-          </li>
-        </ul>
-      </div>*/
+    const items = Information.filter((data) => {
+      if (this.state.search === null) {
+        return data;
+      } else if (
+        data.name.toLowerCase().includes(this.state.search.toLowerCase()) ||
+        data.country.toLowerCase().includes(this.state.search.toLowerCase())
+      ) {
+        return data;
+      }
+    }).map((data) => (
       <div>
         <ul>
-          <li style={{position:'relative',left:'10vh'}}>
-            <button style={styleInfo} onClick={this.handleClick('true')}>{data.name}</button>
-            <button style={styleInfo} onClick={this.handleClick('true')}>{data.age}</button>
-            <button style={styleInfo} onClick={this.handleClick('true')}>{data.country}</button>
+          <li style={{ position: 'relative', left: '10vh' }}>
+            <button style={styleInfo} onClick={this.handleClick(1)}>
+              {data.name}
+            </button>
+            <button style={styleInfo} onClick={this.handleClick(1)}>
+              {data.age}
+            </button>
+            <button style={styleInfo} onClick={this.handleClick(1)}>
+              {data.country}
+            </button>
           </li>
         </ul>
-
       </div>
-      )
-    })
-    if (checkClicked==='true') {
+    ));
+
+    if (checkClicked === 1) {
       return (
         <div style={{ marginTop: '16px' }}>
-        <div className="home-search-area">
-        <input type="text" placeholder="Enter " style={elementStyle} onKeyDown={(e)=>this.searchSpace(e)} />
-        
-        </div>
-       <div className="home-contents-area">
+          <div className="home-search-area">
+            <input
+              type="text"
+              placeholder="Enter "
+              style={elementStyle}
+              onKeyDown={(e) => this.searchSpace(e)}
+            />
+          </div>
+          <div className="home-contents-area">
         <h1 align='center'>참이슬</h1>
         <img className='sojustyle' src={전국소주}></img>
         
         </div>
         </div>
       );
-  }
-    return (
-      <div style={{ marginTop: '16px' }}>
-      <div className="home-search-area">
-      <input type="text" placeholder="Enter " style={elementStyle} onKeyDown={(e)=>this.searchSpace(e)} />
-      
-      </div>
-     <div className="home-contents-area">
-      {items}
-      </div>
-      </div>
-    )
+    } else {
+      return (
+        <div style={{ marginTop: '16px' }}>
+          <div className="home-search-area">
+            <input
+              type="text"
+              placeholder="Enter "
+              style={elementStyle}
+              onKeyDown={(e) => this.searchSpace(e)}
+            />
+          </div>
+          <div className="home-contents-area">{items}</div>
+        </div>
+      );
+    }
   }
 }
 
