@@ -44,32 +44,36 @@ class CommentBox extends Component {
     const { comments, newComment } = this.state;
 
     return (
+      <div>
       <div className="comment-box-container">
-        <div className="comment-list">
-          {comments.length > 0 ? (
-            <ul>
-              {comments.map((comment, index) => (
-                <li key={index} className="comment-item">
-                  {comment}
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p className="no-comments">No comments yet</p>
-          )}
-        </div>
-        <form onSubmit={this.handleSubmit}>
-          <textarea
-            className="comment-input"
-            value={newComment}
-            onChange={this.handleInputChange}
-            placeholder="Write a comment..."
-          ></textarea>
+        <form onSubmit={this.handleSubmit} className="comment-button-submit-location">
+          <div className="comment-input-container">
+            <textarea
+              className="comment-input"
+              value={newComment}
+              onChange={this.handleInputChange}
+              placeholder="Write a comment..."
+            ></textarea>
+          </div>
           <button className="comment-submit-btn" type="submit">
             Submit
           </button>
         </form>
       </div>
+      <div className="comment-list">
+        {comments.length > 0 ? (
+          <ul>
+            {comments.map((comment, index) => (
+              <li key={index} className="comment-item">
+                {comment}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p className="no-comments">No comments yet</p>
+        )}
+      </div>
+    </div>
     );
   }
 }

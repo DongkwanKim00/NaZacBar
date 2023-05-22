@@ -100,7 +100,7 @@ code {
 .home-search-area{ /* 홈 때문에 추가*/
   width: 30%;
   float: left;
-  height: 850px;
+  height: 950px;
   box-sizing: border-box;
   background: #8977ad;
 
@@ -109,7 +109,7 @@ code {
 .home-contents-area{ /* 홈 때문에 추가*/
   width: 70%;
   float: right;
-  height: 850px;
+  height: 950px;
   box-sizing: border-box;
   background: #ece6cc;
 
