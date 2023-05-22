@@ -8,28 +8,50 @@ height: 250px;
 
 .comment-box-container {
   margin-top: -250px;
-  margin-left:-100px
+  margin-left:-100px;
+  
+  
 }
 
 .comment-input {
-  width: 100%;
+  width: 300px;
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  /*margin-left:50px;
+  margin-right:20px;*/
+  margin-top: -80px;
+  margin-right: -185px;
+  margin-left:120px;
 }
 
 .comment-submit-btn {
   background-color: #4caf50;
   color: #fff;
+  height:50px;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-left:190px;
+  margin-top: -45px;
+  margin-bottom: 10px;
+  
+}
+.comment-button-submit-location{
+  display: flex; /* 내부 요소들을 가로로 배치 */
+  
+
 }
 
 .comment-list {
-  margin-top: 350px;
+  margin-top: -280px;
+  overflow: scroll;
+  float: left;
+  margin-left:270px;
+  width : 500px;
+  height : 100px
   
 }
 
