@@ -55,7 +55,19 @@ const BoardList = () => {
       >
         <h1 style={{ color: "white" }}>게시글 목록</h1>
         <div style={{ alignItems: "center" }}>
-          <Link to="/board">
+        <Link
+          to="/board"
+          style={{
+            display: "inline-block",
+            padding: "10px 20px",
+            borderRadius: "5px",
+            backgroundColor: "#fff",
+            color: "#000",
+            textDecoration: "none",
+            fontWeight: "bold",
+            transition: "background-color 0.3s ease",
+          }}
+        >
             <button>작성하기</button>
           </Link>
         </div>

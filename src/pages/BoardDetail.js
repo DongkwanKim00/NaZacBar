@@ -69,7 +69,17 @@ const BoardDetail = () => {
           {post.author} - {new Date(post.createdAt).toLocaleString()}
         </p>
         <p>추천 수: {post.recommendation}</p>
-        <button onClick={handleRecommendation}>추천</button>
+        <button onClick={handleRecommendation}
+        style={{
+          display: "inline-block",
+          padding: "10px 20px",
+          borderRadius: "5px",
+          backgroundColor: "#fff",
+          color: "#000",
+          textDecoration: "none",
+          fontWeight: "bold",
+          transition: "background-color 0.3s ease",
+        }}>추천</button>
         <hr style={{ borderColor: "#ffffff" }} />
         <p>{post.content}</p>
         {post.image && (
@@ -80,10 +90,30 @@ const BoardDetail = () => {
           />
         )}
         <div>
-          <Link to={`/board/edit/${id}`}>
-            <button>수정</button>
+          <Link
+          to={`/board/edit/${id}`}>
+            <button style={{
+            display: "inline-block",
+            padding: "10px 20px",
+            borderRadius: "5px",
+            backgroundColor: "#fff",
+            color: "#000",
+            textDecoration: "none",
+            fontWeight: "bold",
+            transition: "background-color 0.3s ease",
+          }}>수정</button>
           </Link> {" "}
-          <button onClick={handleDelete}>삭제</button>
+          <button onClick={handleDelete}
+          style={{
+            display: "inline-block",
+            padding: "10px 20px",
+            borderRadius: "5px",
+            backgroundColor: "#fff",
+            color: "#000",
+            textDecoration: "none",
+            fontWeight: "bold",
+            transition: "background-color 0.3s ease",
+          }}>삭제</button>
         </div>
 
       </div>
