@@ -106,6 +106,11 @@ class Search extends Component {
                 src={`/전국 소주/${selectedItem.image}`}
                 alt={selectedItem.name}
               />
+              <div align="center">
+              <p>{selectedItem.percent}</p>
+
+              </div>
+
               <div className="content-container">
                 <p>{selectedItem.content}</p>
               </div>
