@@ -104,9 +104,9 @@ const Board = () => {
         <p style={{ color: "white" }}> 카테고리:
           <select className="form-control" value={selectedCategory} onChange={handleChange_category}>
             <option value="">카테고리 선택</option>
-            <option value="Soju">소주</option>
-            <option value="Beer">맥주</option>
-            <option value="Whiskey">위스키</option>
+            <option value="소주">소주</option>
+            <option value="맥주">맥주</option>
+            <option value="위스키">위스키</option>
           </select>
         </p>
         <label htmlFor="content" style={{ color: 'white' }}>Content</label>
@@ -144,14 +144,20 @@ const Board = () => {
 
             {/* 게시글 내용 */}
             <hr />
-            <p style={{ fontSize: "14px" }}>{post.content}</p>
+            <pre style={{ fontSize: "14px", whiteSpace: "pre-wrap" }}>{post.content}</pre>
 
             {/* 이미지 표시 */}
-            {post.image && <img src={`${baseUrl}/${post.image}`} alt="게시글 이미지" style={{ maxWidth: "100%", marginTop: "10px" }} />}
+            {post.image && (
+              <img
+                src={`${baseUrl}/${post.image}`}
+                alt="게시글 이미지"
+                style={{ maxWidth: "100%", marginTop: "10px" }}
+              />
+            )}
           </div>
         ))}
       </div>
-      </div>
+    </div>
   );
 };
 export default Board;

@@ -81,7 +81,14 @@ const BoardDetail = () => {
           transition: "background-color 0.3s ease",
         }}>추천</button>
         <hr style={{ borderColor: "#ffffff" }} />
-        <p>{post.content}</p>
+
+        {/* 줄바꿈 살리기 */}
+        {post.content && post.content.split("\n").map((line, index) => (
+          <span key={index}>
+            {line}
+            <br />
+          </span>
+        ))}
         {post.image && (
           <img
           src={`${baseUrl}/api/board/image/${post.id}`}
@@ -89,6 +96,7 @@ const BoardDetail = () => {
           style={{ maxWidth: "40%", height: "auto" }}
           />
         )}
+        <p></p>
         <div>
           <Link
           to={`/board/edit/${id}`}>

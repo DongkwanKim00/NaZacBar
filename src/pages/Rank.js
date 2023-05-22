@@ -84,7 +84,7 @@ const Rank = () => {
               </tr>
             </thead>
             <tbody>
-              {rankedList.filter((post) => post.category === "Whiskey").map((post) => (
+              {rankedList.filter((post) => post.category === "위스키").map((post) => (
                 <tr key={post.id}>
                   <td style={{ color: "#ffffff", padding: "10px" }}>{post.category}</td>
                   <td style={{ color: "#ffffff", padding: "10px" }}>
@@ -117,7 +117,7 @@ const Rank = () => {
               </tr>
             </thead>
             <tbody>
-              {rankedList.filter((post) => post.category === "Beer").map((post) => (
+              {rankedList.filter((post) => post.category === "맥주").map((post) => (
                 <tr key={post.id}>
                   <td style={{ color: "#ffffff", padding: "10px" }}>{post.category}</td>
                   <td style={{ color: "#ffffff", padding: "10px" }}>
@@ -149,7 +149,7 @@ const Rank = () => {
               </tr>
             </thead>
             <tbody>
-              {rankedList.filter((post) => post.category === "Soju").map((post) => (
+              {rankedList.filter((post) => post.category === "소주").map((post) => (
                 <tr key={post.id}>
                   <td style={{ color: "#ffffff", padding: "10px" }}>{post.category}</td>
                   <td style={{ color: "#ffffff", padding: "10px" }}>
