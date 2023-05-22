@@ -3,8 +3,12 @@ import Information from './info-json';
 import '../index.css';
 import './Soju.css';
 import CommentBox from './CommentBox';
+import ImageButton from './ImageButton';
 
 class Search extends Component {
+
+  
+
   constructor() {
     super();
     this.state = {
@@ -40,6 +44,7 @@ class Search extends Component {
   };
 
   render() {
+    
     const { checkClicked } = this.state;
     const styleInfo = {
       paddingRight: '10px',
@@ -104,22 +109,16 @@ class Search extends Component {
               <div className="content-container">
                 <p>{selectedItem.content}</p>
               </div>
-              <div className="like-container">
-                <img className="like-notlike" src={`/like.png`} alt="Like" />
+              
+                <ImageButton/>
+                {/*<img className="like-notlike" src={`/like.png`} alt="Like" />
                 <img
                   className="like-notlike"
                   src={`/NotLike.png`}
                   alt="Not Like"
-                />
-              </div>
-              <div className="like-container">
-                <div>
-                  <p className="numOfLikes" alt="numOfLikes">15</p>
-                </div>
-                <div>
-                  <p className="numOfNotLikes" alt="numOfNotLikes">20</p>
-                </div>
-              </div>
+                />*/}
+             
+              
               <CommentBox />
             </>
           ) : (
