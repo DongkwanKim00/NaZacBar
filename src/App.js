@@ -12,9 +12,9 @@ import BoardList from "./pages/BoardList";
 import BoardDetail from "./pages/BoardDetail";
 import Rank from "./pages/Rank";
 import Search from "./pages/Search"
+import BoardEdit from "./pages/BoardEdit";
 
 
-import { useState, useEffect } from "react";
 
 
 //12351456
@@ -37,7 +37,7 @@ function App() {
 
           <Route path="boardlist" element={<BoardList />}/>
           <Route exact path="/board/detail/:id" element={<BoardDetail />} />
-
+          <Route exact path="/board/edit/:id" element={<BoardEdit />} />
           <Route path="login" element={<Login />} />
           <Route path="rank" element={<Rank />}/>
             
