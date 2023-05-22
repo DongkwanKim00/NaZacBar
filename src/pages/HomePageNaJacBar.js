@@ -30,12 +30,12 @@ return(
 "          "
 "          "
 "          "
-<button type="button" class="btm_image" id="img_btn" onClick={navigateToSearch}><img src="/beerReal.png"/></button>
+<button type="button" class="btm_image" id="img_btn" onClick={navigateToSearch}><img src="/sojuReal.png"/></button>
 "          "
 "          "
 "          "
 "          "
-<button type="button" class="btm_image" id="img_btn"><img  src="/sojuReal.png"/></button>
+<button type="button" class="btm_image" id="img_btn"><img  src="/beerReal.png"/></button>
 "          "
 "          "
 "          "
