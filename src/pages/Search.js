@@ -47,7 +47,9 @@ class Search extends Component {
     
     const { checkClicked } = this.state;
     const styleInfo = {
-      paddingRight: '10px',
+      paddingRight: '800px',
+      fontSize: '30px',
+      
     };
     const elementStyle = {
       border: 'solid',
@@ -59,6 +61,7 @@ class Search extends Component {
       marginTop: '5vh',
       marginBottom: '10vh',
       borderColor: 'skyblue',
+      
     };
 
     const items = Information.filter((data) => {
@@ -76,9 +79,19 @@ class Search extends Component {
       <div key={data.name}>
         <ul>
           <li style={{ position: 'relative', left: '10vh' }}>
-            <button style={styleInfo} onClick={this.handleClick(1)}>
-              {data.name}
-            </button>
+          <button
+      
+               style={styleInfo}
+              onClick={this.handleClick(1)}
+              onMouseEnter={(e) => {
+                      e.target.style.backgroundColor = 'rgba(0, 0, 0, 0.3)';
+                }}
+              onMouseLeave={(e) => {
+              e.target.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+            }}
+            >
+  {data.name}
+</button>
           </li>
         </ul>
       </div>
