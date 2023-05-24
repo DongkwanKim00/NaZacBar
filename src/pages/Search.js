@@ -56,11 +56,12 @@ class Search extends Component {
       borderRadius: '10px',
       position: 'relative',
       left: '10vh',
-      height: '5vh',
-      width: '30vh',
+      height: '8vh',
+      width: '40vh',
       marginTop: '5vh',
       marginBottom: '10vh',
       borderColor: 'skyblue',
+      fontSize: '25px',
       
     };
 
