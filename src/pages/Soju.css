@@ -4,6 +4,7 @@
 height: 250px;
   margin: auto;
   display: block;
+  border: 5px solid rgba(0, 52, 88, 0.8); /* 남색 테두리 */
 }
 
 .comment-box-container {
