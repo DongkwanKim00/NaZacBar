@@ -54,10 +54,11 @@ class Search extends Component {
       borderRadius: '10px',
       position: 'relative',
       left: '10vh',
-      height: '3vh',
-      width: '20vh',
+      height: '5vh',
+      width: '30vh',
       marginTop: '5vh',
       marginBottom: '10vh',
+      borderColor: 'skyblue',
     };
 
     const items = Information.filter((data) => {
