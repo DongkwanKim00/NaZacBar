@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { getComments, addComment } from './CommentList';
-
 import './Soju.css';
+
 
 class CommentBox extends Component {
   constructor() {
@@ -9,6 +9,7 @@ class CommentBox extends Component {
     this.state = {
       comments: [],
       newComment: '',
+      userName: 'John Doe', // 사용자 이름 예시
     };
   }
 
@@ -31,8 +32,7 @@ class CommentBox extends Component {
     event.preventDefault();
     const { newComment, comments } = this.state;
     if (newComment.trim() !== '') {
-      addComment(newComment);
-      const updatedComments = [newComment, ...comments];
+      const updatedComments = [{ comment: newComment, user: this.state.userName }, ...comments];
       this.setState({
         comments: updatedComments,
         newComment: '',
@@ -45,35 +45,42 @@ class CommentBox extends Component {
 
     return (
       <div>
-      <div className="comment-box-container">
-        <form onSubmit={this.handleSubmit} className="comment-button-submit-location">
-          <div className="comment-input-container">
-            <textarea
-              className="comment-input"
-              value={newComment}
-              onChange={this.handleInputChange}
-              placeholder="Write a comment..."
-            ></textarea>
-          </div>
-          <button className="comment-submit-btn" type="submit">
-            Submit
-          </button>
-        </form>
+        <div className="comment-box-container">
+          <form onSubmit={this.handleSubmit} className="comment-button-submit-location">
+            <div className="comment-input-container">
+              <textarea
+                className="comment-input"
+                value={newComment}
+                onChange={this.handleInputChange}
+                placeholder="Write a comment..."
+              ></textarea>
+            </div>
+            <button className="comment-submit-btn" type="submit">
+              Submit
+            </button>
+          </form>
+        </div>
+        <div className="comment-list">
+          {comments.length > 0 ? (
+            <ul className="comment-ul">
+              {comments.map((comment, index) => (
+                <li key={index} className="comment-item">
+                  <div className="comment-avatar">
+                    <img src="/basic_profile.png" alt="Profile" className="profile-image" />
+                    <span className="comment-username">이름</span>
+                  </div>
+                  <div className="comment-content">
+                    
+                    <span className="comment-text">{comment.comment}</span>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="no-comments">No comments yet</p>
+          )}
+        </div>
       </div>
-      <div className="comment-list">
-        {comments.length > 0 ? (
-          <ul>
-            {comments.map((comment, index) => (
-              <li key={index} className="comment-item">
-                {comment}
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p className="no-comments">No comments yet</p>
-        )}
-      </div>
-    </div>
     );
   }
 }
