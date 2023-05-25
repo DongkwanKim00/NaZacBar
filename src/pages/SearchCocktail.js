@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Information from './info-json';
+import Information from './info-cocktail';
 import '../index.css';
 import './Soju.css';
 import CommentBox from './CommentBox';
@@ -47,7 +47,7 @@ class SearchCocktail extends Component {
     
     const { checkClicked } = this.state;
     const styleInfo = {
-      paddingRight: '800px',
+      paddingRight: '600px',
       fontSize: '30px',
       
     };
@@ -118,11 +118,29 @@ class SearchCocktail extends Component {
               <h1 align="center">{this.state.clickedItem}</h1>
               <img
                 className="sojustyle"
-                src={`/전국 소주/${selectedItem.image}`}
+                src={`/칵테일/${selectedItem.image}`}
                 alt={selectedItem.name}
               />
               <div align="center">
-              <p>{selectedItem.percent}</p>
+              <p>{selectedItem.glass}</p>
+
+              </div>
+              <div align="center">
+              <p>{selectedItem.method}</p>
+
+              </div>
+              <div align="center">
+              <p>{selectedItem.ice}</p>
+
+              </div>
+
+              <div align="center">
+              <p>{selectedItem.ingredient}</p>
+
+              </div>
+
+              <div align="center">
+              <p>{selectedItem.recipe}</p>
 
               </div>
 

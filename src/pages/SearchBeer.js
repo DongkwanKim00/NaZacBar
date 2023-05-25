@@ -47,7 +47,7 @@ class SearchBeer extends Component {
     
     const { checkClicked } = this.state;
     const styleInfo = {
-      paddingRight: '800px',
+      paddingRight: '600px',
       fontSize: '30px',
       
     };
@@ -118,7 +118,7 @@ class SearchBeer extends Component {
               <h1 align="center">{this.state.clickedItem}</h1>
               <img
                 className="sojustyle"
-                src={`/전국 소주/${selectedItem.image}`}
+                src={`/맥주/${selectedItem.image}`}
                 alt={selectedItem.name}
               />
               <div align="center">

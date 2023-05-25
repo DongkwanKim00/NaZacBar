@@ -47,7 +47,7 @@ class SearchWhiskey extends Component {
     
     const { checkClicked } = this.state;
     const styleInfo = {
-      paddingRight: '800px',
+      paddingRight: '600px',
       fontSize: '30px',
       
     };
