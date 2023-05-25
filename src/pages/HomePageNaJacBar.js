@@ -13,6 +13,18 @@ const navigate = useNavigate();
     navigate("/search");
   };
 
+  const navigateToSearchBeer = () => {
+    navigate("/searchbeer");
+  };
+
+  const navigateToSearchWhiskey = () => {
+    navigate("/searchwhiskey");
+  };
+
+  const navigateToSearchCocktail = () => {
+    navigate("/searchcocktail");
+  };
+
 return(
   <div style={{ marginTop: '16px' }}>
 <div style={{
@@ -35,17 +47,17 @@ return(
 "          "
 "          "
 "          "
-<button type="button" class="btm_image" id="img_btn"><img  src="/beerReal.png"/></button>
+<button type="button" class="btm_image" id="img_btn" onClick={navigateToSearchBeer}><img  src="/beerReal.png"/></button>
 "          "
 "          "
 "          "
 "          "
-<button type="button" class="btm_image" id="img_btn"><img  src="/whiskeyReal.png"/></button>
+<button type="button" class="btm_image" id="img_btn" onClick={navigateToSearchWhiskey}><img  src="/whiskeyReal.png"/></button>
 "          "
 "          "
 "          "
 "          "
-<button type="button" class="btm_image" id="img_btn"><img  src="/cocktails.png"/></button>
+<button type="button" class="btm_image" id="img_btn" onClick={navigateToSearchCocktail}><img  src="/cocktails.png"/></button>
 
 </div>
 

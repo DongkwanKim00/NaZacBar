@@ -13,9 +13,11 @@ import BoardDetail from "./pages/BoardDetail";
 import Rank from "./pages/Rank";
 import Search from "./pages/Search"
 import BoardEdit from "./pages/BoardEdit";
-
+import SearchBeer from "./pages/SearchBeer"
 
 import { useState, useEffect } from "react";
+import SearchWhiskey from "./pages/SearchWhiskey";
+import SearchCocktail from "./pages/SearchCocktail";
 
 
 //12351456
@@ -44,7 +46,10 @@ function App() {
           <Route path="rank" element={<Rank />}/>
           
           <Route path="search" element={<Search />}/>
-
+          <Route path="searchbeer" element={<SearchBeer/>}/>
+          
+          <Route path="searchwhiskey" element={<SearchWhiskey/>}/>
+          <Route path="searchcocktail" element={<SearchCocktail/>}/>
 
           <Route path="*" element={<NoPage />} />
         </Route>
