@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Information from './info-json';
+import Information from './info-whiskey';
 import '../index.css';
 import './Soju.css';
 import CommentBox from './CommentBox';
@@ -118,7 +118,7 @@ class SearchWhiskey extends Component {
               <h1 align="center">{this.state.clickedItem}</h1>
               <img
                 className="sojustyle"
-                src={`/전국 소주/${selectedItem.image}`}
+                src={`/위스키/${selectedItem.image}`}
                 alt={selectedItem.name}
               />
               <div align="center">
