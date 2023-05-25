@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Information from './info-json';
+import Information from './info-beer';
 import '../index.css';
 import './Soju.css';
 import CommentBox from './CommentBox';
