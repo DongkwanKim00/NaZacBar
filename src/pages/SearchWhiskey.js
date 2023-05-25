@@ -112,35 +112,40 @@ class SearchWhiskey extends Component {
             onKeyDown={(e) => this.searchSpace(e)}
           />
         </div>
-        <div className="home-contents-area">
-          {checkClicked === 1 && selectedItem ? (
-            <>
-              <h1 align="center">{this.state.clickedItem}</h1>
-              <img
-                className="sojustyle"
-                src={`/위스키/${selectedItem.image}`}
-                alt={selectedItem.name}
-              />
-              <div align="center">
-              <p>{selectedItem.percent}</p>
+        <div className="home-contents-area" style={{ backgroundImage: "url('/noteBackground.jpg')", backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "center" }}>
+  {checkClicked === 1 && selectedItem ? (
+    <>
+      <div className="image-info-container">
+        <div className="image-container">
+          <img
+            className="sojustyle"
+            src={`/위스키/${selectedItem.image}`}
+            alt={selectedItem.name}
+          />
+        </div>
+        <div className="info-container">
+          <div className="info-details">
+            <h1>{selectedItem.name}</h1>
+            <p>{selectedItem.percent}</p>
+          </div>
+          <div className="content-container">
+            <p>{selectedItem.content}</p>
+          </div>
+        </div>
+      </div>
 
-              </div>
+      <div className="button-container">
+        <ImageButton />
+        {/*<img className="like-notlike" src={`/like.png`} alt="Like" />
+        <img
+          className="like-notlike"
+          src={`/NotLike.png`}
+          alt="Not Like"
+        />*/}
+      </div>
 
-              <div className="content-container">
-                <p>{selectedItem.content}</p>
-              </div>
-              
-                <ImageButton/>
-                {/*<img className="like-notlike" src={`/like.png`} alt="Like" />
-                <img
-                  className="like-notlike"
-                  src={`/NotLike.png`}
-                  alt="Not Like"
-                />*/}
-             
-              
-              <CommentBox />
-            </>
+      <CommentBox />
+    </>
           ) : (
             items
           )}

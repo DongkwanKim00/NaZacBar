@@ -103,6 +103,8 @@ code {
   height: 950px;
   box-sizing: border-box;
   background: rgba(0, 52, 88, 0.9); /* 투명도를 조절할 수 있는 rgba() 함수 사용 */
+  font-family: var(--font-googleSingleDay);
+  font-size : 30px;
 
 }
 
@@ -112,16 +114,21 @@ code {
   height: 950px;
   box-sizing: border-box;
   background-color: rgba(245, 245, 220, 0.2);
+  font-family: var(--font-googleSingleDay);
+  font-weight:bold;
+  font-size:30px;
 
 }
 .content-container {
-  padding: 0 250px; /* 좌우 여백 설정 */
+  /*padding: 0 250px;  좌우 여백 설정 */
+  margin-bottom: 20px;
 }
 
 .like-notlike {
   margin: 0 400px;
   width:70px;
   height:70px;
+  margin-top:50px;
   
 }
 .numOfLikes{
@@ -205,4 +212,12 @@ button{ /* 홈 때문에 추가 */
 img{ /* 홈 때문에 추가 */
 
   border: 0;
+}
+
+@font-face {
+	font-family: "NanumBrushScript";
+	src: url(./assets/fonts/NanumBrushScript-Regular.ttf);
+}:root{
+
+  --font-googleSingleDay: "NanumBrushScript";
 }
