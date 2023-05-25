@@ -24,7 +24,7 @@ const SignUp = ({ onClose }) => {
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
-  
+
   const handleAgeChange = (e) => {
     setAge(e.target.value);
   };
@@ -38,15 +38,15 @@ const SignUp = ({ onClose }) => {
       name: name,
       password: password
     })
-    .then((response) => {
-      console.log(response.data);
-      alert('회원가입이 완료되었습니다.');
-      onClose(); // onClose 호출하여 회원가입 창 닫기
-    })
-    .catch((error) => {
-      console.log(error);
-      alert('회원가입에 실패하였습니다.');
-    });
+      .then((response) => {
+        console.log(response.data);
+        alert('회원가입이 완료되었습니다.');
+        onClose(); // onClose 호출하여 회원가입 창 닫기
+      })
+      .catch((error) => {
+        console.log(error);
+        alert('회원가입에 실패하였습니다.');
+      });
   };
 
   const signUpContainerStyle = {
@@ -69,10 +69,11 @@ const SignUp = ({ onClose }) => {
   };
 
   return (
-    <div style={signUpContainerStyle}>
-      <div style={signUpFormStyle}>
+    <div style={{ ...signUpContainerStyle, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <div style={{ ...signUpFormStyle, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-between' }}>
+      <button type="button" onClick={onClose} style={{ ...buttonStyle, color: '#fff', background: 'none', border: 'none', cursor: 'pointer', fontSize: '20px', fontWeight: 'bold', alignSelf: 'flex-end' }}>X</button>
         <h2>회원가입</h2>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <div style={{ marginBottom: 10 }}>
             <label style={{ display: 'block' }}>이름:</label>
             <input type="text" value={name} onChange={handleNameChange} required style={{ color: '#000' }} />
@@ -90,10 +91,12 @@ const SignUp = ({ onClose }) => {
             <input type="number" value={age} onChange={handleAgeChange} required style={{ color: '#000' }} />
           </div>
           <button type="submit" style={{ ...buttonStyle, color: '#fff' }}>회원가입</button>
-          <button type="button" onClick={onClose} style={{ ...buttonStyle, color: '#fff' }}>취소</button>
+          
         </form>
       </div>
     </div>
+
+
   );
 };
 

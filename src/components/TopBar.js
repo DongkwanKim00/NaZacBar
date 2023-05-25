@@ -26,12 +26,11 @@ const Topbar = () => {
 
   return (
     <Navbar
-      bg="dark"
-      variant="dark"
-      expand="lg"
-      className="d-flex justify-content-center w-100"
-      style={{ position: "fixed", top: 0, zIndex: 1 }}
-    >
+  variant="dark"
+  expand="lg"
+  className="d-flex justify-content-center w-100"
+  style={{ position: "fixed", top: 0, zIndex: 1, background: "#2A2C34" }}
+>
       <Navbar.Brand href="/" className="text-center w-100">
         <img src="/logo.png" alt="Logo" />
       </Navbar.Brand>
@@ -39,7 +38,6 @@ const Topbar = () => {
       <Navbar.Collapse id="basic-navbar-nav" className="text-center w-100">
         <Nav className="mx-auto">
           <Nav.Link href="/rank">Rank</Nav.Link>
-          <Nav.Link href="/products">Products</Nav.Link>
           <Nav.Link href="/boardlist">Board</Nav.Link>
           <Nav.Link href="/login">{loginText}</Nav.Link>
         </Nav>
