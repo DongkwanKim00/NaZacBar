@@ -3,7 +3,7 @@ import react, { Component } from "react";
 const Information = [
   {
     "name": "아페롤 스프리츠",
-    "image": "../칵테일/아페롤 스프리츠jpg",
+    "image": "../칵테일/아페롤 스프리츠.jpg",
     "glass" : "와인 글라스(Wine Glass)",
     "method" : "기법: 빌드(Build)",
     "ice" : "얼음 형태 : 큐브(Cube)",
@@ -12,7 +12,7 @@ const Information = [
   },
   {
     "name": "벨리니",
-    "image": "../칵테일/벨리니jpg",
+    "image": "../칵테일/벨리니.jpg",
     "glass" : "플루트 글라스(Flute Glass)",
     "method" : "기법: 빌드(Build)",
     "ice" : "얼음 형태 : 없음",
@@ -21,7 +21,7 @@ const Information = [
   },
   {
     "name": "비시클레타",
-    "image": "../칵테일/비시클레타jpg",
+    "image": "../칵테일/비시클레타.jpg",
     "glass" : "와인 글라스(Wine Glass)",
     "method" : "기법: 빌드(Build)",
     "ice" : "얼음 형태 : 큐브(Cube)",
@@ -30,7 +30,7 @@ const Information = [
   },
   {
     "name": "쿠바 리브레",
-    "image": "../칵테일/쿠바 리브레jpg",
+    "image": "../칵테일/쿠바 리브레.jpg",
     "glass" : "하이볼 글라스(High Ball Glass)",
     "method" : "기법: 빌드(Build)",
     "ice" : "얼음 형태 : 큐브(Cube)",
@@ -39,7 +39,7 @@ const Information = [
   },
   {
     "name": "그레이하운드",
-    "image": "../칵테일/그레이하운드jpg",
+    "image": "../칵테일/그레이하운드.jpg",
     "glass" : "하이볼 글라스(High Ball Glass)",
     "method" : "기법: 빌드(Build)",
     "ice" : "얼음 형태 : 큐브(Cube)",
@@ -48,7 +48,7 @@ const Information = [
   },
   {
     "name": "홀스넥",
-    "image": "../칵테일/홀스넥jpg",
+    "image": "../칵테일/홀스넥.jpg",
     "glass" : "하이볼 글라스(High Ball Glass)",
     "method" : "기법: 빌드(Build)",
     "ice" : "얼음 형태 : 큐브(Cube)",
@@ -57,7 +57,7 @@ const Information = [
   },
   {
     "name": "키르",
-    "image": "../칵테일/키르jpg",
+    "image": "../칵테일/키르.jpg",
     "glass" : "와인 글라스(Wine Glass)",
     "method" : "기법: 빌드(Build)",
     "ice" : "얼음 형태 : 없음",
@@ -66,7 +66,7 @@ const Information = [
   },
   {
     "name": "미모사",
-    "image": "../칵테일/미모사jpg",
+    "image": "../칵테일/미모사.jpg",
     "glass" : "플루트 글라스(Flute Glass)",
     "method" : "기법: 빌드(Build)",
     "ice" : "얼음 형태 : 없음",
@@ -75,7 +75,7 @@ const Information = [
   },
   {
     "name": "팔로마",
-    "image": "../칵테일/팔로마jpg",
+    "image": "../칵테일/팔로마.jpg",
     "glass" : "하이볼 글라스(High Ball Glass)",
     "method" : "기법: 빌드(Build)",
     "ice" : "얼음 형태 : 큐브(cube)",
@@ -84,7 +84,7 @@ const Information = [
   },
   {
     "name": "로시니",
-    "image": "../칵테일/로시니jpg",
+    "image": "../칵테일/로시니.jpg",
     "glass" : "플루트 글라스(Flute Glass)",
     "method" : "기법: 빌드(Build)",
     "ice" : "얼음 형태 : 없음",
