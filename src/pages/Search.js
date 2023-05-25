@@ -5,6 +5,7 @@ import './Soju.css';
 import CommentBox from './CommentBox';
 import ImageButton from './ImageButton';
 
+
 class Search extends Component {
 
   
@@ -48,7 +49,10 @@ class Search extends Component {
     const { checkClicked } = this.state;
     const styleInfo = {
       paddingRight: '800px',
-      fontSize: '30px',
+      fontSize: '45px',
+      fontFamily: 'var(--font-googleSingleDay)',
+      
+      
       
     };
     const elementStyle = {
@@ -61,7 +65,7 @@ class Search extends Component {
       marginTop: '5vh',
       marginBottom: '10vh',
       borderColor: 'skyblue',
-      fontSize: '25px',
+      fontSize: '35px',
       
     };
 
@@ -79,7 +83,7 @@ class Search extends Component {
     }).map((data) => (
       <div key={data.name}>
         <ul>
-          <li style={{ position: 'relative', left: '10vh' }}>
+          <li style={{ position: 'relative', left: '20vh' }}>
           <button
       
                style={styleInfo}
@@ -112,39 +116,44 @@ class Search extends Component {
             onKeyDown={(e) => this.searchSpace(e)}
           />
         </div>
-        <div className="home-contents-area">
-          {checkClicked === 1 && selectedItem ? (
-            <>
-              <h1 align="center">{this.state.clickedItem}</h1>
-              <img
-                className="sojustyle"
-                src={`/전국 소주/${selectedItem.image}`}
-                alt={selectedItem.name}
-              />
-              <div align="center">
-              <p>{selectedItem.percent}</p>
-
-              </div>
-
-              <div className="content-container">
-                <p>{selectedItem.content}</p>
-              </div>
-              
-                <ImageButton/>
-                {/*<img className="like-notlike" src={`/like.png`} alt="Like" />
-                <img
-                  className="like-notlike"
-                  src={`/NotLike.png`}
-                  alt="Not Like"
-                />*/}
-             
-              
-              <CommentBox />
-            </>
-          ) : (
-            items
-          )}
+        <div className="home-contents-area" style={{ backgroundImage: "url('/noteBackground.jpg')", backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "center" }}>
+  {checkClicked === 1 && selectedItem ? (
+    <>
+      <div className="image-info-container">
+        <div className="image-container">
+          <img
+            className="sojustyle"
+            src={`/전국 소주/${selectedItem.image}`}
+            alt={selectedItem.name}
+          />
         </div>
+        <div className="info-container">
+          <div className="info-details">
+            <h1>{selectedItem.name}</h1>
+            <p>{selectedItem.percent}</p>
+          </div>
+          <div className="content-container">
+            <p>{selectedItem.content}</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="button-container">
+        <ImageButton />
+        {/*<img className="like-notlike" src={`/like.png`} alt="Like" />
+        <img
+          className="like-notlike"
+          src={`/NotLike.png`}
+          alt="Not Like"
+        />*/}
+      </div>
+
+      <CommentBox />
+    </>
+  ) : (
+    items
+  )}
+</div>
       </div>
     );
   }
