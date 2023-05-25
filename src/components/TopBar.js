@@ -37,9 +37,9 @@ const Topbar = () => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav" className="text-center w-100">
         <Nav className="mx-auto">
-          <Nav.Link href="/rank">Rank</Nav.Link>
-          <Nav.Link href="/boardlist">Board</Nav.Link>
-          <Nav.Link href="/login">{loginText}</Nav.Link>
+          <Nav.Link href="/rank" className="forTopBarFont" style={{ fontSize: "56px" }}>Rank</Nav.Link>
+          <Nav.Link href="/boardlist" className="forTopBarFont" style={{ fontSize: "56px" }}>Board</Nav.Link>
+          <Nav.Link href="/login" className="forTopBarFont" style={{ fontSize: "56px" }}>{loginText}</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

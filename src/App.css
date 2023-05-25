@@ -22,6 +22,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  font-family: var(--font-googleSingleDay);
 }
 
 .App-link {
@@ -38,3 +39,10 @@
   }
 }
 
+@font-face {
+	font-family: "NanumBrushScript";
+	src: url(./assets/fonts/NanumBrushScript-Regular.ttf);
+}:root{
+
+  --font-googleSingleDay: "NanumBrushScript";
+}

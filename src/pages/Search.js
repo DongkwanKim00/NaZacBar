@@ -107,7 +107,7 @@ class Search extends Component {
     );
 
     return (
-      <div style={{ marginTop: '16px' }}>
+      <div style={{ marginTop: '35px' }}>
         <div className="home-search-area">
           <input
             type="text"

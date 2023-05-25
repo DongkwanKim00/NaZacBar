@@ -47,8 +47,8 @@ class SearchBeer extends Component {
     
     const { checkClicked } = this.state;
     const styleInfo = {
-      paddingRight: '600px',
-      fontSize: '30px',
+      paddingRight: '500px',
+      fontSize: '45px',
       
     };
     const elementStyle = {
@@ -79,7 +79,7 @@ class SearchBeer extends Component {
     }).map((data) => (
       <div key={data.name}>
         <ul>
-          <li style={{ position: 'relative', left: '10vh' }}>
+          <li style={{ position: 'relative', left: '20vh' }}>
           <button
       
                style={styleInfo}
@@ -103,7 +103,7 @@ class SearchBeer extends Component {
     );
 
     return (
-      <div style={{ marginTop: '16px' }}>
+      <div style={{ marginTop: '35px' }}>
         <div className="home-search-area">
           <input
             type="text"

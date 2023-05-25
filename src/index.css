@@ -100,7 +100,7 @@ code {
 .home-search-area{ /* 홈 때문에 추가*/
   width: 30%;
   float: left;
-  height: 950px;
+  height: 1250px;
   box-sizing: border-box;
   background: rgba(0, 52, 88, 0.9); /* 투명도를 조절할 수 있는 rgba() 함수 사용 */
   font-family: var(--font-googleSingleDay);
@@ -111,7 +111,7 @@ code {
 .home-contents-area{ /* 홈 때문에 추가*/
   width: 70%;
   float: right;
-  height: 950px;
+  height: 1250px;
   box-sizing: border-box;
   background-color: rgba(245, 245, 220, 0.2);
   font-family: var(--font-googleSingleDay);
@@ -202,6 +202,11 @@ code {
 .like-container img {
   margin-right: -305px; /* 이미지 사이의 오른쪽 여백 제거 */
   
+}
+
+.forTopBarFont{
+  font-family: var(--font-googleSingleDay);
+  font-size: 100px;
 }
 
 button{ /* 홈 때문에 추가 */
