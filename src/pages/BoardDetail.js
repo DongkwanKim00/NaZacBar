@@ -64,11 +64,11 @@ const BoardDetail = () => {
       }}
     >
       <div style={{ textAlign: "center", margin: "50px", color: "#ffffff" }}>
-        <h1 style={{ textAlign: "center", color: "#ffffff", position: "fixed", left: "48%", top: "15%" }}>{post.title}</h1>
-        <p style={{ textAlign: "center", color: "#ffffff", position: "fixed", left: "43%", top: "23%" }}>
+        <h1>{post.title}</h1>
+        <p>
           {post.author} - {new Date(post.createdAt).toLocaleString()}
         </p>
-        <p style={{ textAlign: "center", color: "#ffffff", position: "fixed", left: "70%", top: "23%" }}>추천 수: {post.recommendation}</p>
+        <p>추천 수: {post.recommendation}</p>
         <button onClick={handleRecommendation}
         style={{
           display: "inline-block",
@@ -79,8 +79,16 @@ const BoardDetail = () => {
           textDecoration: "none",
           fontWeight: "bold",
           transition: "background-color 0.3s ease",
-          position: "fixed", left: "75%", top: "21%"
         }}>추천</button>
+        <hr style={{ borderColor: "#ffffff" }} />
+        <p>{post.content}</p>
+        {post.image && (
+          <img
+          src={`${baseUrl}/api/board/image/${post.id}`}
+          alt="게시글 이미지"
+          style={{ maxWidth: "40%", height: "auto" }}
+          />
+        )}
         <div>
           <Link
           to={`/board/edit/${id}`}>
@@ -93,7 +101,6 @@ const BoardDetail = () => {
             textDecoration: "none",
             fontWeight: "bold",
             transition: "background-color 0.3s ease",
-            position: "fixed", left: "80%", top: "21%"
           }}>수정</button>
           </Link> {" "}
           <button onClick={handleDelete}
@@ -106,47 +113,8 @@ const BoardDetail = () => {
             textDecoration: "none",
             fontWeight: "bold",
             transition: "background-color 0.3s ease",
-            position: "fixed", left: "85%", top: "21%"
           }}>삭제</button>
         </div>
-        
-        <div
-  style={{
-    left: "25%",
-    width: "50%",
-    marginTop: "100px",
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
-    position: "fixed",
-    maxHeight: "calc(100vh - 300px)",
-    overflowY: "auto"
-  }}
->
-  <table style={{ width: "100%" }}>
-    <tbody>
-      <tr key={post.id}>
-        
-          <img
-            src={`${baseUrl}/api/board/image/${post.id}`}
-            alt="post image"
-            style={{ maxWidth: "30%", height: "auto" }}
-          />
-          <hr style={{border:"solid 2px #fff"}}/>
-        </tr>
-        
-        <tr>
-          {/* <p>{post.content}</p> */}
-          {post.content && post.content.split("\n").map((line, index) => (
-          <span key={index}>
-            {line}
-            <br />
-          </span>
-        ))}
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-    
 
       </div>
     </div>
