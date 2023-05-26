@@ -102,9 +102,10 @@ code {
   float: left;
   height: 1250px;
   box-sizing: border-box;
-  background: rgba(0, 52, 88, 0.9); /* 투명도를 조절할 수 있는 rgba() 함수 사용 */
+  background: rgb(0, 2, 6); /* 투명도를 조절할 수 있는 rgba() 함수 사용 */
   font-family: var(--font-googleSingleDay);
   font-size : 30px;
+
 
 }
 
