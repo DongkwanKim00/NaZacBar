@@ -67,7 +67,7 @@ class CommentBox extends Component {
                 <li key={index} className="comment-item">
                   <div className="comment-avatar">
                     <img src="/basic_profile.png" alt="Profile" className="profile-image" />
-                    <span className="comment-username">이름</span>
+                    <span className="comment-username">칵테일 러버</span>
                     <img src="/memoPin.jpg" alt="Memo Pin" className="memo-pin-image" />
                   </div>
                   <div className="comment-content">

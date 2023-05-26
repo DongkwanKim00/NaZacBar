@@ -26,38 +26,29 @@ const navigate = useNavigate();
   };
 
 return(
-  <div style={{ marginTop: '36px' }}>
+  <div style={{ marginTop: '-55px' }}>
 <div style={{
-    background: `url('/NajacBarHomePage.png') no-repeat center`,
+    background: `url('/MainHomePage.png') no-repeat center`,
         WebkitBackgroundSize: 'cover',
         MozBackgroundSize: 'cover',
         OBackgroundSize: 'cover',
         backgroundSize: 'cover',
-        minHeight: '70vh',
-        padding: '50px'
+        minHeight: '60vh',
+        padding: '150px'
   }}>
 
-<div>
+<div style={{
+   marginTop: '70px'
+  }}>
     <p>  .</p><p>  .</p><p>  .</p><p>  .</p><p>  .</p><p>  .</p><p>  .</p>
-"          "
-"          "
-"          "
-<button type="button" class="btm_image" id="img_btn" onClick={navigateToSearch}><img src="/sojuReal.png"/></button>
-"          "
-"          "
-"          "
-"          "
-<button type="button" class="btm_image" id="img_btn" onClick={navigateToSearchBeer}><img  src="/beerReal.png"/></button>
-"          "
-"          "
-"          "
-"          "
-<button type="button" class="btm_image" id="img_btn" onClick={navigateToSearchWhiskey}><img  src="/whiskeyReal.png"/></button>
-"          "
-"          "
-"          "
-"          "
-<button type="button" class="btm_image" id="img_btn" onClick={navigateToSearchCocktail}><img  src="/cocktails.png"/></button>
+
+<button type="button" class="btm_image" id="img_btn" onClick={navigateToSearch}><img src="/sojuButton.png"/></button>
+
+<button type="button" class="btm_image" id="img_btn" onClick={navigateToSearchBeer} style={{marginLeft:'160px', marginTop: '100px'}}><img  src="/beerButton.png"/></button>
+
+<button type="button" class="btm_image" id="img_btn" onClick={navigateToSearchWhiskey} style={{marginLeft:'210px'}}><img  src="/whiskeyButton.png"/></button>
+
+<button type="button" class="btm_image" id="img_btn" onClick={navigateToSearchCocktail} style={{marginLeft:'210px'}}><img  src="/cocktailButton.png"/></button>
 
 </div>
 
