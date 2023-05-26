@@ -16,6 +16,7 @@ class Search extends Component {
       search: null,
       checkClicked: 0,
       clickedItem: null,
+      category: '',
     };
   }
 
@@ -25,6 +26,7 @@ class Search extends Component {
       this.setState({
         checkClicked: 1,
         clickedItem: itemName,
+        category : itemName,
       });
     }
   };
