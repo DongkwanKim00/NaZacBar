@@ -19,14 +19,15 @@ import { useState, useEffect } from "react";
 import SearchWhiskey from "./pages/SearchWhiskey";
 import SearchCocktail from "./pages/SearchCocktail";
 
-
 //12351456
 
 function App() {
 
 
   return (
+    
     <>
+    
     <div style={{height: '80px', backgroundColor: '#f1f1f1'}}>
       <Topbar />
     </div>
@@ -56,6 +57,7 @@ function App() {
       </Routes>
     </BrowserRouter>
     <Footer/>
+    
     </>
   );
 }

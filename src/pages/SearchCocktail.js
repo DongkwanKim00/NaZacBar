@@ -5,27 +5,52 @@ import './Soju.css';
 import CommentBox from './CommentBox';
 import ImageButton from './ImageButton';
 
+
 class SearchCocktail extends Component {
-
-  
-
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       search: null,
       checkClicked: 0,
       clickedItem: null,
+      category: ''
     };
   }
 
+  
+
+  
+  handleCategoryChange = (newCategory) => {
+    this.setState({ category: newCategory });
+  };
+  // handleClick = (sign) => (e) => {
+  //   if (sign === 1) {
+  //     const itemName = e.target.textContent;
+  //     console.log("빵꾸똥꾸", itemName);
+  //     this.setState({
+  //       checkClicked: 1,
+  //       clickedItem: itemName,
+  //       category : itemName,
+        
+  //     });
+      
+  //   }
+    
+  // };
   handleClick = (sign) => (e) => {
     if (sign === 1) {
       const itemName = e.target.textContent;
+      console.log("빵꾸똥꾸", itemName);
       this.setState({
         checkClicked: 1,
         clickedItem: itemName,
+        category: itemName,
+      }, () => {
+        console.log('123456789',this.state.category); // 상태 속성인 category 값 출력
       });
+      console.log('asdfasdfaas',this.state.category); 
     }
+    console.log("teastestaest", this.category);
   };
 
   searchSpace = (event) => {
@@ -47,8 +72,11 @@ class SearchCocktail extends Component {
     
     const { checkClicked } = this.state;
     const styleInfo = {
-      paddingRight: '500px',
+      paddingRight: '800px',
       fontSize: '45px',
+      fontFamily: 'var(--font-googleSingleDay)',
+      
+      
       
     };
     const elementStyle = {
@@ -65,7 +93,6 @@ class SearchCocktail extends Component {
       backgroundImage: `url(${process.env.PUBLIC_URL}/searchButton.png)`,
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
-      
     };
 
     const items = Information.filter((data) => {
@@ -113,8 +140,10 @@ class SearchCocktail extends Component {
             placeholder="Enter "
             style={elementStyle}
             onKeyDown={(e) => this.searchSpace(e)}
+            
           />
-               <img src="/cocktails.png"  style={{
+
+          <img src="/sojuTestTest.png"  style={{
       width: '100%', // 이미지의 너비를 조정합니다. 원하는 크기로 변경하세요.
       height: 'auto', // 이미지의 높이를 자동으로 조정합니다.
       display: 'block', // 이미지를 블록 요소로 설정하여 가로 중앙 정렬을 적용합니다.
@@ -125,11 +154,11 @@ class SearchCocktail extends Component {
         <div className="home-contents-area" style={{ backgroundImage: "url('/noteBackground.jpg')", backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "center" }}>
   {checkClicked === 1 && selectedItem ? (
     <>
-      <div className="image-info-container">
+     <div className="image-info-container">
         <div className="image-container">
           <img
             className="sojustyle"
-            src={`/전국 소주/${selectedItem.image}`}
+            src={`/칵테일/${selectedItem.image}`}
             alt={selectedItem.name}
           />
         </div>
@@ -147,7 +176,6 @@ class SearchCocktail extends Component {
           </div>
         </div>
       </div>
-
       <div className="button-container">
         <ImageButton />
         {/*<img className="like-notlike" src={`/like.png`} alt="Like" />
@@ -158,12 +186,12 @@ class SearchCocktail extends Component {
         />*/}
       </div>
 
-      <CommentBox />
+      <CommentBox category={this.state.category} />
     </>
-          ) : (
-            items
-          )}
-        </div>
+  ) : (
+    items
+  )}
+</div>
       </div>
     );
   }

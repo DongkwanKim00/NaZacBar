@@ -7,26 +7,50 @@ import ImageButton from './ImageButton';
 
 
 class Search extends Component {
-
-  
-
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       search: null,
       checkClicked: 0,
       clickedItem: null,
+      category: ''
     };
   }
 
+  
+
+  
+  handleCategoryChange = (newCategory) => {
+    this.setState({ category: newCategory });
+  };
+  // handleClick = (sign) => (e) => {
+  //   if (sign === 1) {
+  //     const itemName = e.target.textContent;
+  //     console.log("빵꾸똥꾸", itemName);
+  //     this.setState({
+  //       checkClicked: 1,
+  //       clickedItem: itemName,
+  //       category : itemName,
+        
+  //     });
+      
+  //   }
+    
+  // };
   handleClick = (sign) => (e) => {
     if (sign === 1) {
       const itemName = e.target.textContent;
+      console.log("빵꾸똥꾸", itemName);
       this.setState({
         checkClicked: 1,
         clickedItem: itemName,
+        category: itemName,
+      }, () => {
+        console.log('123456789',this.state.category); // 상태 속성인 category 값 출력
       });
+      console.log('asdfasdfaas',this.state.category); 
     }
+    console.log("teastestaest", this.category);
   };
 
   searchSpace = (event) => {
@@ -159,7 +183,7 @@ class Search extends Component {
         />*/}
       </div>
 
-      <CommentBox />
+      <CommentBox category={this.state.category} />
     </>
   ) : (
     items
