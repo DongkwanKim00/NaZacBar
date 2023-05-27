@@ -143,7 +143,7 @@ class SearchWhiskey extends Component {
             
           />
 
-          <img src="/whiskeyReal.png"  style={{
+          <img src="/sojuTestTest.png"  style={{
       width: '100%', // 이미지의 너비를 조정합니다. 원하는 크기로 변경하세요.
       height: 'auto', // 이미지의 높이를 자동으로 조정합니다.
       display: 'block', // 이미지를 블록 요소로 설정하여 가로 중앙 정렬을 적용합니다.
