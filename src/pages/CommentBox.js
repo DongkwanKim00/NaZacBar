@@ -5,11 +5,14 @@ import LoggedInUserContext from './LoggedInUserContext';
 import axios from 'axios';
 import categoty from './Search.js';
 
+
+// The part that embodies the comments
 const CommentBox = ({ category }) => {
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
   const [chats, setChats] = useState([]);
 
+  // The part that connects to the server
   const baseUrl = 'http://localhost:8092';
 
   const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
@@ -21,13 +24,14 @@ const CommentBox = ({ category }) => {
   }, [category]);
 
   const fetchComments = () => {
-    // 서버나 다른 소스에서 댓글을 가져와서
-    // comments 상태를 업데이트합니다.
+    // I'll get comments from the server or other sources
+    // Updates the comments status.
     // const comments = getComments();
     // setComments(comments);
     // console.log('testetestste', comments);
   };
 
+  // The part where you bring in the comments
   const fetchChats = () => {
     axios
       .get(`${baseUrl}/api/chat/${category}`)
@@ -49,12 +53,12 @@ const CommentBox = ({ category }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (newComment.trim() !== '') {
-      // 새로운 댓글 객체를 생성합니다.
+      // Create a new comment object
       const comment = {
         id: Date.now(),
         comment: newComment
       };
-      // 새로운 댓글을 comments 상태에 추가합니다.
+      // Adds a new comment to the comments status
       setComments((prevComments) => [...prevComments, comment]);
     }
   };
@@ -73,7 +77,7 @@ const CommentBox = ({ category }) => {
         .then((response) => {
           console.log(response.data);
           alert('댓글 입력 완료!');
-          fetchChats(); // 새로운 댓글을 제출한 후 업데이트된 댓글을 가져옵니다.
+          fetchChats(); // Get updated comments after submitting new comments
         })
         .catch((error) => {
           console.log(error);

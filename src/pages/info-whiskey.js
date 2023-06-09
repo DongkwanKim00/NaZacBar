@@ -1,5 +1,7 @@
 import react, { Component } from "react";
 
+
+// Whiskey Information
 const Information = [
   {
     "name": "조니 워커 블루 라벨",

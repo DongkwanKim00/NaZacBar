@@ -19,40 +19,29 @@ class Search extends Component {
 
   
 
-  
+  // Function to handle the change of category
   handleCategoryChange = (newCategory) => {
     this.setState({ category: newCategory });
   };
-  // handleClick = (sign) => (e) => {
-  //   if (sign === 1) {
-  //     const itemName = e.target.textContent;
-  //     console.log("빵꾸똥꾸", itemName);
-  //     this.setState({
-  //       checkClicked: 1,
-  //       clickedItem: itemName,
-  //       category : itemName,
-        
-  //     });
-      
-  //   }
-    
-  // };
+ 
+  // Function to handle click events
   handleClick = (sign) => (e) => {
     if (sign === 1) {
       const itemName = e.target.textContent;
-      console.log("빵꾸똥꾸", itemName);
+      
       this.setState({
         checkClicked: 1,
         clickedItem: itemName,
         category: itemName,
       }, () => {
-        console.log('123456789',this.state.category); // 상태 속성인 category 값 출력
+        
       });
-      console.log('asdfasdfaas',this.state.category); 
+      
     }
-    console.log("teastestaest", this.category);
+   
   };
 
+  // Function to handle the search input
   searchSpace = (event) => {
     if (event.key === 'Enter') {
       if (this.state.checkClicked === 1) {
@@ -94,7 +83,7 @@ class Search extends Component {
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
     };
-
+    // Where to get alcohol information
     const items = Information.filter((data) => {
       if (this.state.search === null || this.state.search === undefined) {
         return data;
@@ -106,7 +95,7 @@ class Search extends Component {
       ) {
         return data;
       }
-    }).map((data) => (
+    }).map((data) => ( // The part where alcohols are listed and shown
       <div key={data.name}>
         <ul>
           <li style={{ position: 'relative', left: '20vh' }}>
@@ -144,10 +133,10 @@ class Search extends Component {
           />
 
           <img src="/sojuTestTest.png"  style={{
-      width: '100%', // 이미지의 너비를 조정합니다. 원하는 크기로 변경하세요.
-      height: 'auto', // 이미지의 높이를 자동으로 조정합니다.
-      display: 'block', // 이미지를 블록 요소로 설정하여 가로 중앙 정렬을 적용합니다.
-      margin: '0 auto', // 가로 중앙 정렬을 위해 좌우 여백을 자동으로 조정합니다.
+      width: '100%', 
+      height: 'auto', 
+      display: 'block', 
+      margin: '0 auto', 
       marginBottom: '-90px',
     }} />
         </div>
@@ -175,12 +164,7 @@ class Search extends Component {
 
       <div className="button-container">
         <ImageButton />
-        {/*<img className="like-notlike" src={`/like.png`} alt="Like" />
-        <img
-          className="like-notlike"
-          src={`/NotLike.png`}
-          alt="Not Like"
-        />*/}
+        
       </div>
 
       <CommentBox category={this.state.category} />

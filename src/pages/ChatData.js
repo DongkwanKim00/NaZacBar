@@ -1,4 +1,5 @@
 
+// For storing category values
 const ChatData = [{
 
     category : ''

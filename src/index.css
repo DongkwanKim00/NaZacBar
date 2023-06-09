@@ -97,19 +97,19 @@ code {
   opacity: 0.8;
 }
 
-.home-search-area{ /* 홈 때문에 추가*/
+.home-search-area{ 
   width: 30%;
   float: left;
   height: 1250px;
   box-sizing: border-box;
-  background: rgb(0, 2, 6); /* 투명도를 조절할 수 있는 rgba() 함수 사용 */
+  background: rgb(0, 2, 6); 
   font-family: var(--font-googleSingleDay);
   font-size : 30px;
 
 
 }
 
-.home-contents-area{ /* 홈 때문에 추가*/
+.home-contents-area{ 
   width: 70%;
   float: right;
   height: 1250px;
@@ -121,7 +121,7 @@ code {
 
 }
 .content-container {
-  /*padding: 0 250px;  좌우 여백 설정 */
+  
   margin-bottom: 20px;
 }
 
@@ -210,12 +210,12 @@ code {
   font-size: 100px;
 }
 
-button{ /* 홈 때문에 추가 */
+button{ 
 
   background-color:transparent;
   border: 0;
 }
-img{ /* 홈 때문에 추가 */
+img{ 
 
   border: 0;
 }
