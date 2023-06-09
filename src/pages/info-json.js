@@ -1,5 +1,7 @@
 import react, { Component } from "react";
 
+
+// Soju Information
 const Information = [
   {
     "name": "참이슬",

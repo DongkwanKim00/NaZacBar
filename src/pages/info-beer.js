@@ -1,5 +1,6 @@
 import react, { Component } from "react";
 
+// Beer Information
 const Information = [
   {
     "name": "카스 프레시 콜드 브루드",
