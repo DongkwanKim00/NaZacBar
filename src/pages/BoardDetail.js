@@ -10,13 +10,16 @@ const BoardDetail = () => {
   const [notFound, setNotFound] = useState(false);
 
   useEffect(() => {
+    // Fetch the post data for the specified ID
     axios
       .get(`${baseUrl}/api/board/${id}`)
       .then((response) => {
         const data = response.data;
         if (data === "NoPage") {
+          // If the response indicates that the page doesn't exist, set the notFound state to true
           setNotFound(true);
         } else {
+          // Otherwise, set the post state to the fetched data
           setPost(response.data);
         }
       })
@@ -24,13 +27,14 @@ const BoardDetail = () => {
   }, [id]);
 
   const handleRecommendation = async () => {
+    // Send a recommendation for the post
     await axios
       .post(`${baseUrl}/api/board/recommendation`, {
         postId: id
       })
       .then((response) => {
         console.log(response.data);
-        // 추천 후 게시글을 다시 조회하여 업데이트된 데이터를 표시
+        // Fetch the post data again to display the updated data after the recommendation
         axios
           .get(`${baseUrl}/api/board/${id}`)
           .then((response) => setPost(response.data))
@@ -41,8 +45,8 @@ const BoardDetail = () => {
       });
   };
 
-  // 삭제
   const handleDelete = async () => {
+    // Delete the post
     try {
       await axios.delete(`${baseUrl}/api/board/${id}`);
       window.location.href = '/boardlist';
@@ -64,66 +68,47 @@ const BoardDetail = () => {
       }}
     >
       <div style={{ textAlign: "center", margin: "50px", color: "#ffffff" }}>
+        {/* Display post information */}
         <h1>{post.title}</h1>
         <p>
           {post.author} - {new Date(post.createdAt).toLocaleString()}
         </p>
         <p>추천 수: {post.recommendation}</p>
-        <button onClick={handleRecommendation}
-        style={{
-          display: "inline-block",
-          padding: "10px 20px",
-          borderRadius: "5px",
-          backgroundColor: "#fff",
-          color: "#000",
-          textDecoration: "none",
-          fontWeight: "bold",
-          transition: "background-color 0.3s ease",
-        }}>추천</button>
+        <button onClick={handleRecommendation}>
+          추천
+        </button>
         <hr style={{ borderColor: "#ffffff" }} />
 
-        {/* 줄바꿈 살리기 */}
+        {/* Display post content with line breaks */}
         {post.content && post.content.split("\n").map((line, index) => (
           <span key={index}>
             {line}
             <br />
           </span>
         ))}
+
+        {/* Display post image */}
         {post.image && (
           <img
-          src={`${baseUrl}/api/board/image/${post.id}`}
-          alt="게시글 이미지"
-          style={{ maxWidth: "40%", height: "auto" }}
+            src={`${baseUrl}/api/board/image/${post.id}`}
+            alt="게시글 이미지"
+            style={{ maxWidth: "40%", height: "auto" }}
           />
         )}
         <p></p>
-        <div>
-          <Link
-          to={`/board/edit/${id}`}>
-            <button style={{
-            display: "inline-block",
-            padding: "10px 20px",
-            borderRadius: "5px",
-            backgroundColor: "#fff",
-            color: "#000",
-            textDecoration: "none",
-            fontWeight: "bold",
-            transition: "background-color 0.3s ease",
-          }}>수정</button>
-          </Link> {" "}
-          <button onClick={handleDelete}
-          style={{
-            display: "inline-block",
-            padding: "10px 20px",
-            borderRadius: "5px",
-            backgroundColor: "#fff",
-            color: "#000",
-            textDecoration: "none",
-            fontWeight: "bold",
-            transition: "background-color 0.3s ease",
-          }}>삭제</button>
-        </div>
 
+        <div>
+          {/* Link to edit the post */}
+          <Link to={`/board/edit/${id}`}>
+            <button>
+              수정
+            </button>
+          </Link>{" "}
+          {/* Button to delete the post */}
+          <button onClick={handleDelete}>
+            삭제
+          </button>
+        </div>
       </div>
     </div>
   );

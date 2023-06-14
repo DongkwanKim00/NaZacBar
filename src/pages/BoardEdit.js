@@ -10,9 +10,11 @@ const BoardEdit = () => {
   const [content, setContent] = useState("");
 
   useEffect(() => {
+    // Fetch the post data for the specified ID
     axios
       .get(`${baseUrl}/api/board/${id}`)
       .then((response) => {
+        // Set the title and content states to the fetched data
         setTitle(response.data.title);
         setContent(response.data.content);
       })
@@ -23,6 +25,7 @@ const BoardEdit = () => {
     e.preventDefault();
 
     try {
+      // Send a PUT request to update the post
       await axios.put(`${baseUrl}/api/board/${id}`, {
         title,
         content

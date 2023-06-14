@@ -5,11 +5,11 @@ import { Link } from "react-router-dom";
 const Rank = () => {
   const baseUrl = "http://localhost:8086";
   const [rankedList, setRankedList] = useState([]);
-
+ // Get ranked posts on component mount
   useEffect(() => {
     getRankedPosts();
   }, []);
-
+  // Asynchronous function to get ranked posts
   const getRankedPosts = async () => {
     try {
       const response = await axios.get(`${baseUrl}/api/board/ranked`);
@@ -20,7 +20,7 @@ const Rank = () => {
   };
 
   const [selectedOption, setSelectedOption] = useState('');
-
+ // Event handler when user changes the option
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
   };

@@ -9,12 +9,14 @@ const BoardList = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-        axios
+    // Fetch the list of posts
+    axios
       .get(`${baseUrl}/api/board`)
       .then((response) => setPosts(response.data))
       .catch((error) => console.log(error));
   }, []);
 
+  // Styled components for list items
   const ListItem = styled.div`
     margin-bottom: 20px;
     padding: 10px;
@@ -24,7 +26,7 @@ const BoardList = () => {
     display: flex;
     align-items: center;
   `;
-   const Thumbnail = styled.img`
+  const Thumbnail = styled.img`
     width: 50px;
     height: auto;
     margin-right: 10px;
@@ -56,7 +58,7 @@ const BoardList = () => {
   `;
 
   return (
-  <div
+    <div
       style={{
         background: `url('/barImage2.png') no-repeat center center fixed`,
         WebkitBackgroundSize: "cover",
@@ -67,14 +69,14 @@ const BoardList = () => {
         padding: "50px",
       }}
     >
-      <h1 style={{ textAlign: "center", color: "#ffffff"}}>게시글 목록</h1>
+      <h1 style={{ textAlign: "center", color: "#ffffff" }}>게시글 목록</h1>
       <div style={{ textAlign: "right", marginBottom: "20px", marginRight: "20%" }}>
         <CreateButton to="/board">작성하기</CreateButton>
       </div>
       <div
         id="basic"
         style={{
-           left: "20%",
+          left: "20%",
           width: "60%",
           marginTop: "40px",
           backgroundColor: "rgba(0, 0, 0, 0.5)",
@@ -84,7 +86,8 @@ const BoardList = () => {
           padding: "10px",
           color: "#ffffff",
         }}
-      > <table style={{ width: "100%" }}>
+      >
+        <table style={{ width: "100%" }}>
           <thead>
             <tr>
               <th style={{ borderBottom: "1px solid #ffffff", padding: "10px" }}>
@@ -135,7 +138,7 @@ const BoardList = () => {
           </tbody>
         </table>
       </div>
-          </div>
+    </div>
   );
 };
 

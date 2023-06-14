@@ -8,9 +8,9 @@ const Board = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
-  const [image, setImage] = useState(null); // 이미지 상태 추가
+  const [image, setImage] = useState(null); // Added image state
 
-  // 작성자를 로그인된 사용자의 이름으로 설정
+  // Set author to the name of the logged-in user
   const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
   const author = loggedInUser ? loggedInUser.name : '';
 
@@ -51,7 +51,7 @@ const Board = () => {
     setImage(e.target.files[0]);
   };
 
-  // 제출
+  // Submit
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -60,12 +60,12 @@ const Board = () => {
     formData.append('author', author);
     formData.append('content', content);
     formData.append('category', selectedCategory);
-    formData.append('image', image); // 이미지 추가
+    formData.append('image', image); // Added image
 
     await axios
       .post(baseUrl + "/api/board", formData, {
         headers: {
-          'Content-Type': 'multipart/form-data' // 이미지를 업로드하기 위해 Content-Type 설정
+          'Content-Type': 'multipart/form-data' // Set Content-Type to upload images
         }
       })
       .then((response) => {
@@ -113,7 +113,7 @@ const Board = () => {
         <textarea id="content" className="form-control" placeholder="Write your content here"
           required={true} value={content} onChange={handleChange_content}
           style={{ height: "200px" }} />
-        {/* 이미지 업로드 */}
+        {/* Image upload */}
         <p style={{ color: "white" }}>이미지 첨부: <input type="file" onChange={handleImageUpload} accept="image/*" /></p>
 
         <p></p>
@@ -122,7 +122,7 @@ const Board = () => {
         </Button>
       </form>
 
-      {/* 게시글 목록 */}
+      {/* List of posts */}
       <div style={{ minHeight: "60vh", overflowY: "auto" }}>
         {posts.map((post) => (
           <div
@@ -142,11 +142,11 @@ const Board = () => {
             </p>
             <p style={{ fontSize: "14px", marginBottom: "5px" }}>카테고리: {post.category}</p>
 
-            {/* 게시글 내용 */}
+            {/* Post content */}
             <hr />
             <pre style={{ fontSize: "14px", whiteSpace: "pre-wrap" }}>{post.content}</pre>
 
-            {/* 이미지 표시 */}
+            {/* Display image */}
             {post.image && (
               <img
                 src={`${baseUrl}/${post.image}`}
