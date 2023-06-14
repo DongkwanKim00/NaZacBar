@@ -9,10 +9,11 @@ const SignUp = ({ onClose }) => {
 
   const baseUrl = "http://localhost:8084";
   const buttonStyle = {
-    // 다른 스타일 속성들...
+    // Other style properties...
     borderRadius: '5px',
   };
 
+  // Event handlers for input fields
   const handleNameChange = (e) => {
     setName(e.target.value);
   };
@@ -41,7 +42,7 @@ const SignUp = ({ onClose }) => {
     .then((response) => {
       console.log(response.data);
       alert('회원가입이 완료되었습니다.');
-      onClose(); // onClose 호출하여 회원가입 창 닫기
+      onClose(); // Call onClose to close the sign-up form
     })
     .catch((error) => {
       console.log(error);
